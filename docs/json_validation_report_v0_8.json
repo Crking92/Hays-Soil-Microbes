@@ -1,0 +1,42 @@
+[
+  {
+    "file": "data/evidence_grade_lookup.json",
+    "valid": true,
+    "bytes": 986
+  },
+  {
+    "file": "data/gardener_glossary.json",
+    "valid": true,
+    "bytes": 2164
+  },
+  {
+    "file": "data/kyle_etj_soil_summary.json",
+    "valid": true,
+    "bytes": 553285
+  },
+  {
+    "file": "data/lab_pedon_summary.json",
+    "valid": true,
+    "bytes": 18591
+  },
+  {
+    "file": "data/microbial_function_summary_v06.json",
+    "valid": true,
+    "bytes": 37109
+  },
+  {
+    "file": "data/microbial_habitat_rulebook.json",
+    "valid": true,
+    "bytes": 3732
+  },
+  {
+    "file": "data/microbial_taxa_summary_v05.json",
+    "valid": true,
+    "bytes": 279960
+  },
+  {
+    "file": "data/source_notes.json",
+    "valid": true,
+    "bytes": 777
+  }
+]
