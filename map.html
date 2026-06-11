@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Find My Soil | Hays/Kyle Soil Dashboard</title>
+<link rel="stylesheet" href="assets/style.css"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+</head>
+<body>
+<header>
+<h1>Find My Soil</h1>
+<p class="big-intro">Click the map, use your location, enter coordinates, or search an address to get a plain-language soil and soil-life interpretation.</p>
+<div class="mode-nav"><a href="index.html">Home</a><a href="gardener.html">Simple gardener view</a><a href="research.html">Research view</a></div>
+</header>
+<main>
+<section class="beginner-hero">
+<h2>How this works</h2>
+<p>The map checks which loaded Kyle/ETJ soil polygon contains your selected point. It then translates the soil record into plain-language clues for gardening, native plants, restoration, and likely soil-life benefits.</p>
+<div class="yes-no-grid"><div class="yes-box"><h3>Good for</h3><ul><li>Understanding likely soil setting</li><li>Planting and restoration conversations</li><li>Seeing drainage, clay, limestone, or shallow-soil clues</li><li>Explaining likely microbial habitat benefits</li></ul></div><div class="no-box"><h3>Not a substitute for</h3><ul><li>A property-level soil test</li><li>Local microbial sequencing</li><li>Fertilizer prescriptions</li><li>Engineering or regulatory determinations</li></ul></div></div>
+</section>
+<section class="location-layout" style="margin-top:18px;">
+<div class="card"><h2>Interactive map</h2><p id="mapStatus" class="small">Loading soil polygons…</p><div id="mapError"></div><div id="map"></div></div>
+<div class="lookup-panel">
+<div class="card"><h2>Look up a location</h2>
+<h3>Use current location</h3><button id="locationButton">Use my location</button><p id="geoStatus" class="status-line">Your browser will ask permission. This static dashboard does not store your location.</p>
+<h3>Search address</h3><div class="address-row"><input id="addressInput" type="search" placeholder="Example: Kyle City Hall, Kyle, TX"/><button id="addressButton">Search</button></div><p id="addressStatus" class="status-line">Address search uses OpenStreetMap/Nominatim.</p>
+<h3>Enter coordinates</h3><div class="coord-row"><input id="latInput" type="number" step="any" placeholder="Latitude"/><input id="lngInput" type="number" step="any" placeholder="Longitude"/><button id="coordButton">Lookup</button></div><p id="coordStatus" class="status-line">Use decimal degrees, for example 29.99, -97.88.</p>
+<button id="fitButton" class="secondary">Zoom to soil layer</button></div>
+<div id="lookupResult" class="lookup-result"><p class="result-title">No location selected yet</p><p class="result-subtitle">Click the map or use one of the lookup tools above.</p><div class="result-item"><strong>What you will get</strong> Soil map unit, plain-language soil clues, garden/restoration meaning, microbial habitat interpretation, and evidence label.</div></div>
+</div>
+</section>
+</main>
+<footer><p>Location lookup is approximate and depends on the soil polygon data loaded in the dashboard.</p></footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script><script src="assets/map.js"></script>
+</body></html>
