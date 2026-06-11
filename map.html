@@ -9,7 +9,7 @@
 <body>
 <header>
 <h1>Find My Soil</h1>
-<p class="big-intro">Click the map, use your location, enter coordinates, or search an address to get a plain-language soil and soil-life interpretation.</p>
+<p class="big-intro">Click the map, use your location, enter coordinates, or search an address. You can now switch between Kyle + ETJ and broader SSURGO soil layers.</p>
 <div class="mode-nav"><a href="index.html">Home</a><a href="gardener.html">Simple gardener view</a><a href="research.html">Research view</a></div>
 </header>
 <main>
@@ -19,7 +19,7 @@
 <div class="yes-no-grid"><div class="yes-box"><h3>Good for</h3><ul><li>Understanding likely soil setting</li><li>Planting and restoration conversations</li><li>Seeing drainage, clay, limestone, or shallow-soil clues</li><li>Explaining likely microbial habitat benefits</li></ul></div><div class="no-box"><h3>Not a substitute for</h3><ul><li>A property-level soil test</li><li>Local microbial sequencing</li><li>Fertilizer prescriptions</li><li>Engineering or regulatory determinations</li></ul></div></div>
 </section>
 <section class="location-layout" style="margin-top:18px;">
-<div class="card"><h2>Interactive map</h2><p id="mapStatus" class="small">Loading soil polygons…</p><div id="mapError"></div><div id="map"></div></div>
+<div class="card"><h2>Interactive map</h2><div class="guide-box"><h3>Choose map scope</h3><select id="layerSelect"></select><p id="layerScopeNote" class="small"></p></div><p id="mapStatus" class="small">Loading soil polygons…</p><div id="mapError"></div><div id="map"></div></div>
 <div class="lookup-panel">
 <div class="card"><h2>Look up a location</h2>
 <h3>Use current location</h3><button id="locationButton">Use my location</button><p id="geoStatus" class="status-line">Your browser will ask permission. This static dashboard does not store your location.</p>

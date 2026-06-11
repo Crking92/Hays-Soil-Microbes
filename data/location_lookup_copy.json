@@ -1,5 +1,1 @@
-{
-  "privacy_note": "Browser location is used only in your browser. This static dashboard does not store your location.",
-  "address_note": "Address search uses OpenStreetMap/Nominatim and sends the typed address to that public geocoding service.",
-  "evidence_label": "Mapped soil context plus inferred microbial habitat. Regional NMDC/NEON microbial evidence is not local confirmation."
-}
+{"privacy_note": "Browser location is used only in your browser. This static dashboard does not store your location.", "address_note": "Address search uses OpenStreetMap/Nominatim and sends the typed address to that public geocoding service.", "evidence_label": "Mapped soil context plus inferred microbial habitat. Regional NMDC/NEON microbial evidence is not local confirmation."}

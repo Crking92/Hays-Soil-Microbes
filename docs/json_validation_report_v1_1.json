@@ -1,0 +1,72 @@
+[
+  {
+    "file": "data/beginner_copy.json",
+    "valid": true,
+    "bytes": 3318
+  },
+  {
+    "file": "data/evidence_grade_lookup.json",
+    "valid": true,
+    "bytes": 842
+  },
+  {
+    "file": "data/gardener_glossary.json",
+    "valid": true,
+    "bytes": 1984
+  },
+  {
+    "file": "data/hays_county_soil_polygons_simplified.geojson",
+    "valid": true,
+    "bytes": 134536
+  },
+  {
+    "file": "data/kyle_etj_soil_polygons.geojson",
+    "valid": true,
+    "bytes": 2301003
+  },
+  {
+    "file": "data/kyle_etj_soil_summary.json",
+    "valid": true,
+    "bytes": 488295
+  },
+  {
+    "file": "data/lab_pedon_summary.json",
+    "valid": true,
+    "bytes": 15821
+  },
+  {
+    "file": "data/location_lookup_copy.json",
+    "valid": true,
+    "bytes": 382
+  },
+  {
+    "file": "data/map_layer_manifest.json",
+    "valid": true,
+    "bytes": 1071
+  },
+  {
+    "file": "data/microbial_function_summary_v06.json",
+    "valid": true,
+    "bytes": 27701
+  },
+  {
+    "file": "data/microbial_habitat_rulebook.json",
+    "valid": true,
+    "bytes": 3322
+  },
+  {
+    "file": "data/microbial_taxa_summary_v05.json",
+    "valid": true,
+    "bytes": 236124
+  },
+  {
+    "file": "data/source_notes.json",
+    "valid": true,
+    "bytes": 741
+  },
+  {
+    "file": "data/tx604_comal_hays_soil_polygons_simplified.geojson",
+    "valid": true,
+    "bytes": 8812039
+  }
+]
