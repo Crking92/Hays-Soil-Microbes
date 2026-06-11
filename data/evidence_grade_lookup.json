@@ -1,0 +1,28 @@
+{
+  "evidence_grades": [
+    {
+      "grade": "A",
+      "label": "Local confirmed",
+      "meaning": "Direct Hays/Kyle sample evidence or site-specific validated measurement.",
+      "dashboard_use": "Highest confidence; can support local presence/context claims."
+    },
+    {
+      "grade": "B",
+      "label": "Regional observed",
+      "meaning": "Observed in processed NEON/NMDC CLBJ/Texas-like sample outputs.",
+      "dashboard_use": "Regional analog evidence; not local confirmation."
+    },
+    {
+      "grade": "C",
+      "label": "Soil habitat inferred",
+      "meaning": "Inferred from SSURGO, lab pedon support, and soil ecology rules.",
+      "dashboard_use": "Use for likely guilds/functions, not named local taxa claims."
+    },
+    {
+      "grade": "D",
+      "label": "Reference/function-only",
+      "meaning": "General literature/tool-based association without local or regional observation.",
+      "dashboard_use": "Use only for interpretation notes."
+    }
+  ]
+}

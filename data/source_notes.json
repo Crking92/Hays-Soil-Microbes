@@ -1,0 +1,13 @@
+{
+  "project": "Hays/Kyle Soil + Microbial Habitat Dashboard",
+  "version": "v0.7 GitHub static prototype",
+  "created_utc": "2026-06-11T15:16:38+00:00",
+  "public_warning": "Do not publish sensitive local sample metadata, private/internal notes, raw huge sequencing files, or unpublished City materials without review.",
+  "dashboard_rules": [
+    "Biosample metadata is not taxa or function confirmation.",
+    "Processed taxonomy files support observed regional taxa evidence.",
+    "Processed KO/EC/product files support functional potential, not measured activity.",
+    "Hays/Kyle local confirmation requires local sampling or site-specific assays.",
+    "All microbial taxa/function results shown here are regional analog evidence unless explicitly labeled local."
+  ]
+}
