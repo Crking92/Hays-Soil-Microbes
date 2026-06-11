@@ -1,99 +1,118 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Simple Gardener View | Hays/Kyle Soil Dashboard</title>
+  <title>Gardener View | Soil Life Made Simple</title>
   <link rel="stylesheet" href="assets/style.css"/>
 </head>
 <body>
 <header>
-  <h1>Simple Gardener View</h1>
+  <h1>Soil Life Made Simple</h1>
   <p class="big-intro">
-    For people who are new to soil microbes, soil nutrients, and soil health.
-    This page explains the benefits first, then shows the data only after the basics make sense.
+    A beginner-friendly guide to what soil microbes do, why they matter, and how this dashboard can help with gardening,
+    native plants, and restoration.
   </p>
   <div class="mode-nav">
     <a href="index.html">Home</a>
+    <a href="map.html">Find my soil</a>
     <a href="research.html">Research view</a>
-    <a href="#soil-search">Search soils</a>
-    <a href="#plain-words">Plain words</a>
-  <a href="map.html">Find my soil</a></div>
+    <a href="#soil-lookup">Soil lookup</a>
+  </div>
 </header>
 
 <main>
   <div id="gardenerError"></div>
 
-  <section class="beginner-hero">
-    <h2>Start here</h2>
-    <p id="oneSentence" class="big-intro"></p>
+  <section class="story-hero">
+    <h2>Start with the big idea</h2>
+    <p id="coreMessage" class="big-intro"></p>
     <div class="yes-no-grid">
       <div class="yes-box">
-        <h3>The main idea</h3>
+        <h3>Think of soil as habitat</h3>
         <p>
-          Healthy soil works like a living system. Plants feed soil life through roots and leaf litter.
-          Soil life helps recycle nutrients, build structure, and support resilient plant communities.
+          Soil is where roots, water, air, minerals, organic matter, bacteria, fungi, and tiny soil animals interact.
+          A good garden or restoration plan works with that habitat instead of fighting it.
         </p>
       </div>
       <div class="no-box">
-        <h3>Important limit</h3>
+        <h3>Do not start with microbe names</h3>
         <p>
-          This dashboard does not test your exact yard. It combines local soil maps with regional microbial evidence
-          to explain what the soil is likely able to support.
+          Beginners do not need to memorize microbes. Start with the jobs: recycle nutrients, build structure,
+          help roots, buffer drought, and process organic matter.
         </p>
       </div>
     </div>
   </section>
 
   <section class="card">
-    <h2>How to use this page</h2>
-    <div id="beginnerSteps" class="simple-grid"></div>
-  </section>
-
-  <section class="card" style="margin-top:18px;">
-    <h2>Why soil microbes matter in a garden or restoration site</h2>
-    <p class="small">You do not need to memorize microbe names. Focus on the jobs they help with.</p>
-    <div id="benefitCards" class="simple-grid"></div>
-  </section>
-
-  <section class="card" style="margin-top:18px;">
-    <h2>What the regional function evidence suggests</h2>
+    <h2>The soil food web in plain language</h2>
     <p>
-      These cards summarize the kinds of microbial jobs detected in regional CLBJ/Texas-like processed data.
-      Think of them as “possible soil-life benefits to pay attention to,” not proof for a specific yard.
+      The soil food web is the living network belowground. Plants feed microbes. Microbes recycle organic matter.
+      Tiny predators release nutrients. Roots and fungi help build structure.
     </p>
-    <div id="gardenerFunctionCards" class="simple-grid"></div>
+    <div id="foodWebSteps" class="story-path"></div>
   </section>
 
-  <section id="soil-search" class="card" style="margin-top:18px;">
-    <h2>Search the soil records</h2>
+  <section class="card" style="margin-top:18px;">
+    <h2>What this means for a gardener or land steward</h2>
     <p>
-      Search for simple words. Try <span class="codeish">clay</span>, <span class="codeish">limestone</span>,
-      <span class="codeish">shallow</span>, <span class="codeish">drainage</span>, <span class="codeish">prairie</span>,
-      or a soil name if you know one.
+      These are the useful benefits. The data supports these ideas, but the teaching comes first.
+    </p>
+    <div id="benefitCards" class="translation-grid"></div>
+  </section>
+
+  <section class="card" style="margin-top:18px;">
+    <h2>Translate the function data into soil-life jobs</h2>
+    <p>
+      Instead of showing gene tables first, this section translates the regional function data into plain-language soil jobs.
+    </p>
+    <div id="functionTranslations" class="translation-grid"></div>
+
+    <details class="reveal-box">
+      <summary>Why are there numbers here?</summary>
+      <div class="reveal-content">
+        <p>
+          The numbers are counts of regional gene/function signals from processed microbial data. A bigger number usually means
+          that signal appeared more often in this dataset. It does not mean the function is active in your exact yard.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <section class="card" style="margin-top:18px;">
+    <h2>Practical actions that support the soil food web</h2>
+    <div id="simpleActions" class="use-case-grid"></div>
+  </section>
+
+  <section class="card" style="margin-top:18px;">
+    <h2>What the dashboard can and cannot say</h2>
+    <div id="canCannot" class="yes-no-grid"></div>
+  </section>
+
+  <section id="soil-lookup" class="card" style="margin-top:18px;">
+    <h2>Optional: look at the soil records</h2>
+    <p>
+      This part is intentionally lower on the page. Use it when you want to connect the teaching above to actual soil records.
     </p>
     <div class="controls">
-      <input id="gardenerSearch" type="search" placeholder="Search soil clues…"/>
+      <input id="gardenerSearch" type="search" placeholder="Search clay, limestone, shallow, drainage…"/>
       <button class="secondary" onclick="document.getElementById('gardenerSearch').value=''; filterGardenerSoils();">Clear</button>
+      <a href="map.html"><button type="button">Find my soil on the map</button></a>
     </div>
-    <div id="gardenerSoilTable" style="margin-top:14px;"></div>
-  </section>
 
-  <section class="card" style="margin-top:18px;">
-    <h2>Practical planting and care takeaways</h2>
-    <div id="decisionCards" class="simple-grid"></div>
+    <details class="reveal-box">
+      <summary>Show soil lookup table</summary>
+      <div class="reveal-content">
+        <div id="gardenerSoilTable"></div>
+      </div>
+    </details>
   </section>
-
-  <section id="plain-words" class="card" style="margin-top:18px;">
-    <h2>Plain words glossary</h2>
-    <p class="small">Quick definitions for common words in the dashboard.</p>
-    <div id="plainTerms" class="simple-grid"></div>
-  </section>
-<section class="card" style="margin-top:18px;"><h2>Find soil by location</h2><p>Use the map page to click a location, use browser location, enter coordinates, or search an address.</p><p><a href="map.html">Open location lookup</a></p></section>
 </main>
 
 <footer>
-  <p>Simple gardener view. Use the research view for methods, tables, and evidence details.</p>
+  <p>Gardener view: teaching first, data second. Use the research view for full tables and methods.</p>
 </footer>
 <script src="assets/gardener.js"></script>
 </body>

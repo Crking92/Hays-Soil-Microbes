@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,53 +11,49 @@
 <header>
   <h1>Research View</h1>
   <p class="big-intro">
-    A more detailed view for staff, students, reviewers, and technically curious users.
-    This version still explains what each layer means before showing the tables.
+    A clearer technical view. It explains what each layer means, why it matters, and how the dashboard avoids overclaiming.
   </p>
   <div class="mode-nav">
     <a href="index.html">Home</a>
-    <a href="gardener.html">Simple gardener view</a>
+    <a href="gardener.html">Gardener view</a>
+    <a href="map.html">Find my soil</a>
     <a href="docs/methods.md">Methods</a>
-    <a href="docs/evidence_grades.md">Evidence grades</a>
-  <a href="map.html">Find my soil</a></div>
+  </div>
 </header>
 
 <main>
   <div id="appError"></div>
 
-  <section class="card">
-    <h2>What, why, and how this dashboard works</h2>
+  <section class="story-hero">
+    <h2>Read this before reading the tables</h2>
     <div class="help-strip">
       <div class="help-item">
-        <strong>What</strong>
-        This dashboard layers mapped soil data, lab-supported soil properties, regional observed microbes,
-        and processed gene/function annotations.
+        <strong>1. Soil is the local habitat layer</strong>
+        Soil maps and lab pedons describe the physical and chemical setting: texture, pH, clay, carbonate, drainage, depth, and related clues.
       </div>
       <div class="help-item">
-        <strong>Why</strong>
-        Soil conditions shape water, nutrients, roots, microbial habitat, restoration potential, and native plant fit.
+        <strong>2. Microbial data are regional analog evidence</strong>
+        NEON/NMDC records show what was observed in similar regional datasets, not proof for every point in Hays County.
       </div>
       <div class="help-item">
-        <strong>How</strong>
-        Local soil data provide the habitat frame. Regional NEON/NMDC data provide microbial analog evidence.
-        Evidence labels prevent overclaiming.
+        <strong>3. Function data mean potential</strong>
+        KO, EC, and product-name hits suggest genetic potential, not measured activity.
       </div>
       <div class="help-item">
-        <strong>How to read it</strong>
-        Start with soil context, then check regional taxa/functions, then confirm the evidence grade before making a claim.
+        <strong>4. Use evidence grades</strong>
+        Do not make a local confirmation claim unless the data layer is actually local.
       </div>
     </div>
+  </section>
 
-    <details class="details-lite">
-      <summary>Beginner translation of the science</summary>
-      <div class="details-body">
-        <p>
-          Soil maps tell us what kind of habitat is likely present. Microbial datasets tell us what microbes and genes
-          were observed in similar regional soils. Combining them helps explain likely soil processes, but it does not
-          prove the same microbes or processes are present at every point in Kyle.
-        </p>
-      </div>
-    </details>
+  <section class="card">
+    <h2>What this dashboard is trying to answer</h2>
+    <div class="use-case-grid">
+      <div class="use-case-card"><strong>What kind of soil habitat is mapped here?</strong><p>Use the soil and map pages.</p></div>
+      <div class="use-case-card"><strong>What soil-life functions might this habitat support?</strong><p>Use the function translations and evidence notes.</p></div>
+      <div class="use-case-card"><strong>What regional microbes/functions have been observed?</strong><p>Use the taxa and function tabs, but keep the regional label.</p></div>
+      <div class="use-case-card"><strong>What can I say publicly?</strong><p>Use the evidence tab and limitations language.</p></div>
+    </div>
   </section>
 
   <section class="grid dashboard-grid" style="margin-top:18px;">
@@ -64,12 +61,12 @@
       <div>
         <h2>Map + soil lookup</h2>
         <p class="small">
-          Search for soil names, components, textures, drainage classes, or habitat terms. v0.9 still uses a map placeholder;
-          the GeoJSON is included for the future clickable map.
+          For location-based use, open the map page. This lookup table is mainly for checking the summarized soil records.
         </p>
         <div class="controls">
           <input id="soilSearch" type="search" placeholder="Search soil, component, habitat…"/>
           <button class="secondary" onclick="document.getElementById('soilSearch').value=''; filterSoils();">Clear</button>
+          <a href="map.html"><button type="button">Open map lookup</button></a>
         </div>
       </div>
       <div class="map-placeholder" aria-label="Map placeholder"></div>
@@ -95,60 +92,86 @@
     </div>
 
     <div id="panel-overview" class="tab-panel">
-      <h2>Overview: what the summaries mean</h2>
+      <h2>Overview: translated summaries</h2>
       <p>
-        The function cards below are broad categories created from processed gene/product annotations.
-        They are useful for seeing major potential soil functions, but they are not direct measurements of activity.
+        The cards below summarize broad functional-potential signals. They are useful for interpretation, but not direct measurements.
       </p>
       <div id="functionCards" class="stat-grid"></div>
-      <h2 style="margin-top:22px;">Lab pedon support</h2>
-      <p class="small">Lab pedons provide measured soil context such as pH, chemistry, texture, and related properties where available.</p>
-      <div id="labTable"></div>
+
+      <details class="reveal-box">
+        <summary>Show lab pedon support table</summary>
+        <div class="reveal-content">
+          <p class="small">Lab pedons provide measured context such as pH, texture, chemistry, and layer counts where available.</p>
+          <div id="labTable"></div>
+        </div>
+      </details>
     </div>
 
     <div id="panel-soils" class="tab-panel" style="display:none;">
-      <h2>Soils: the local habitat frame</h2>
+      <h2>Soils: local habitat frame</h2>
       <p>
-        Soil data are the local foundation. They help explain what kind of microbial habitat and restoration setting is likely present.
+        This table is supporting evidence. For lay users, the map and gardener view are easier places to start.
       </p>
-      <div id="soilTable"></div>
+      <details class="reveal-box" open>
+        <summary>Show soil summary table</summary>
+        <div class="reveal-content"><div id="soilTable"></div></div>
+      </details>
     </div>
 
     <div id="panel-taxa" class="tab-panel" style="display:none;">
       <h2>Observed regional taxa</h2>
       <div class="notice">
-        These are observed in processed regional analog outputs. They help identify microbial groups known from comparable datasets,
-        but they are not local Hays/Kyle confirmations.
+        These taxa are observed in processed regional analog outputs. They are not local Hays/Kyle confirmations.
       </div>
-      <div id="taxaTable" style="margin-top:14px;"></div>
+      <details class="reveal-box">
+        <summary>Show observed taxa table</summary>
+        <div class="reveal-content"><div id="taxaTable"></div></div>
+      </details>
     </div>
 
     <div id="panel-functions" class="tab-panel" style="display:none;">
       <h2>Functional potential</h2>
       <div class="notice">
-        KO/EC/product-name hits indicate genes or annotations associated with potential functions.
-        They do not prove those functions were active at sampling time.
+        KO/EC/product-name hits indicate genes or annotations associated with possible functions. They do not prove activity.
       </div>
-      <h3>Top KEGG Orthology IDs</h3><p class="small">KO IDs are gene/function categories used for microbial functional annotation.</p><div id="koTable"></div>
-      <h3>Top Enzyme Commission IDs</h3><p class="small">EC IDs describe enzyme types. They are useful for broad biochemical potential.</p><div id="ecTable"></div>
-      <h3>Top product names</h3><p class="small">Product names are readable gene annotations. Many will be broad or hypothetical.</p><div id="productTable"></div>
+
+      <details class="reveal-box">
+        <summary>Show top KEGG Orthology IDs</summary>
+        <div class="reveal-content">
+          <p class="small">KO IDs are gene/function categories used in microbial annotation.</p>
+          <div id="koTable"></div>
+        </div>
+      </details>
+
+      <details class="reveal-box">
+        <summary>Show top Enzyme Commission IDs</summary>
+        <div class="reveal-content">
+          <p class="small">EC IDs describe enzyme types and broad biochemical potential.</p>
+          <div id="ecTable"></div>
+        </div>
+      </details>
+
+      <details class="reveal-box">
+        <summary>Show top product names</summary>
+        <div class="reveal-content">
+          <p class="small">Product names are readable gene annotations. Many will be broad or hypothetical.</p>
+          <div id="productTable"></div>
+        </div>
+      </details>
     </div>
 
     <div id="panel-evidence" class="tab-panel" style="display:none;">
       <h2>Evidence grades</h2>
-      <p>
-        Always check this section before making a claim. It separates local confirmation, regional observation,
-        soil-habitat inference, and general reference interpretation.
-      </p>
+      <p>Use this section before making claims in public materials.</p>
       <div id="evidenceTable"></div>
-      <h2>Source notes + public rules</h2><div id="sourceNotes"></div>
+      <h2>Source notes + public rules</h2>
+      <div id="sourceNotes"></div>
     </div>
   </section>
-<section class="card" style="margin-top:18px;"><h2>Find soil by location</h2><p>Use the map page to click a location, use browser location, enter coordinates, or search an address.</p><p><a href="map.html">Open location lookup</a></p></section>
 </main>
 
 <footer>
-  <p>Research view. Large raw sequencing files are excluded from the public dashboard.</p>
+  <p>Research view: interpretation first, dense data hidden until opened.</p>
 </footer>
 <script src="assets/app.js"></script>
 </body>
