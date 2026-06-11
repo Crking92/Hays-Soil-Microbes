@@ -1,24 +1,154 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Research View | Hays/Kyle Soil + Microbial Habitat Dashboard</title><link rel="stylesheet" href="assets/style.css"/></head><body>
-<header><h1>Research View</h1><p>Technical-but-readable view of the soil, microbial taxa, and functional-potential layers. Use this view for staff review, methods transparency, data QA, and project documentation.</p><div class="badge-row"><span class="badge">SSURGO soil context</span><span class="badge">Lab pedon support</span><span class="badge">Observed regional taxa</span><span class="badge">Functional potential</span><span class="badge">Evidence graded</span></div><div class="mode-nav"><a href="index.html">Home</a><a href="gardener.html">Gardener view</a><a href="docs/methods.md">Methods</a><a href="docs/evidence_grades.md">Evidence grades</a></div></header>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Research View | Hays/Kyle Soil + Microbial Habitat Dashboard</title>
+  <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+<header>
+  <h1>Research View</h1>
+  <p class="big-intro">
+    A more detailed view for staff, students, reviewers, and technically curious users.
+    This version still explains what each layer means before showing the tables.
+  </p>
+  <div class="mode-nav">
+    <a href="index.html">Home</a>
+    <a href="gardener.html">Simple gardener view</a>
+    <a href="docs/methods.md">Methods</a>
+    <a href="docs/evidence_grades.md">Evidence grades</a>
+  </div>
+</header>
+
 <main>
-    <section class="card">
-      <h2>How to use this research view</h2>
-      <div class="guide-box">
-        <h3>What you are looking at</h3>
-        <p>This page is a layered evidence dashboard. It starts with mapped soil habitat, then adds lab pedon support, observed regional microbial taxa, and functional-potential annotations from processed metagenome outputs.</p>
-        <ol class="step-list">
-          <li><strong>Start with soils.</strong> Search for a soil, component, texture, habitat class, or management keyword.</li>
-          <li><strong>Check observed taxa.</strong> These are regional analog observations, not local Kyle confirmations.</li>
-          <li><strong>Check functions.</strong> KO/EC/product hits show functional potential, not measured activity.</li>
-          <li><strong>Use the evidence tab.</strong> It explains how confident each kind of claim should be.</li>
-        </ol>
+  <div id="appError"></div>
+
+  <section class="card">
+    <h2>What, why, and how this dashboard works</h2>
+    <div class="help-strip">
+      <div class="help-item">
+        <strong>What</strong>
+        This dashboard layers mapped soil data, lab-supported soil properties, regional observed microbes,
+        and processed gene/function annotations.
       </div>
-    </section>
-<div id="appError"></div><section class="grid dashboard-grid"><div class="card map-shell"><div><h2>Map + soil lookup</h2><p class="small">This prototype includes a map placeholder. The next pass can add Leaflet and real simplified GeoJSON polygon click events.</p><div class="controls"><input id="soilSearch" type="search" placeholder="Search soil, component, habitat…"/><button class="secondary" onclick="document.getElementById('soilSearch').value=''; filterSoils();">Clear</button></div></div><div class="map-placeholder" aria-label="Map placeholder"></div></div><div class="card"><h2>Dashboard status</h2><div id="statCards" class="stat-grid"></div><div class="notice good-notice" style="margin-top:14px;"><strong>Current science label:</strong> microbial taxa and functional evidence are confirmed in processed CLBJ/Texas-like NMDC/NEON outputs, but remain regional analog evidence for Hays/Kyle until local samples are collected.</div></div></section>
-<section class="card" style="margin-top:18px;"><div class="tabs"><button class="tab active" data-tab="overview">Overview</button><button class="tab" data-tab="soils">Soils</button><button class="tab" data-tab="taxa">Observed taxa</button><button class="tab" data-tab="functions">Functions</button><button class="tab" data-tab="evidence">Evidence</button></div>
-<div id="panel-overview" class="tab-panel"><h2>Function category summary</h2><p class="small">These categories are keyword-screened summaries from product-name annotations. They are dashboard triage, not definitive pathway reconstruction.</p><div id="functionCards" class="stat-grid"></div><h2 style="margin-top:22px;">Lab pedon support</h2><div id="labTable"></div></div>
-<div id="panel-soils" class="tab-panel" style="display:none;"><h2>Kyle + ETJ soil summary</h2><p class="small">Public-facing soil/component and microbial-habitat summary from the dashboard database.</p><div id="soilTable"></div></div>
-<div id="panel-taxa" class="tab-panel" style="display:none;"><h2>Observed regional taxa</h2><div class="notice">Taxa shown here are observed in processed NMDC/NEON regional analog outputs. They are not local Hays/Kyle confirmations.</div><div id="taxaTable" style="margin-top:14px;"></div></div>
-<div id="panel-functions" class="tab-panel" style="display:none;"><h2>Functional potential</h2><div class="notice">KO/EC/product-name hits indicate functional potential in processed metagenome annotations. They do not prove active processes.</div><h3>Top KEGG Orthology IDs</h3><div id="koTable"></div><h3>Top Enzyme Commission IDs</h3><div id="ecTable"></div><h3>Top product names</h3><div id="productTable"></div></div>
-<div id="panel-evidence" class="tab-panel" style="display:none;"><h2>Evidence grades</h2><div id="evidenceTable"></div><h2>Source notes + public rules</h2><div id="sourceNotes"></div></div></section></main>
-<footer><p>Static prototype. For GitHub Pages, publish the repository root containing <span class="codeish">index.html</span>. Large raw sequencing files should stay out of the public repository.</p></footer><script src="assets/app.js"></script></body></html>
+      <div class="help-item">
+        <strong>Why</strong>
+        Soil conditions shape water, nutrients, roots, microbial habitat, restoration potential, and native plant fit.
+      </div>
+      <div class="help-item">
+        <strong>How</strong>
+        Local soil data provide the habitat frame. Regional NEON/NMDC data provide microbial analog evidence.
+        Evidence labels prevent overclaiming.
+      </div>
+      <div class="help-item">
+        <strong>How to read it</strong>
+        Start with soil context, then check regional taxa/functions, then confirm the evidence grade before making a claim.
+      </div>
+    </div>
+
+    <details class="details-lite">
+      <summary>Beginner translation of the science</summary>
+      <div class="details-body">
+        <p>
+          Soil maps tell us what kind of habitat is likely present. Microbial datasets tell us what microbes and genes
+          were observed in similar regional soils. Combining them helps explain likely soil processes, but it does not
+          prove the same microbes or processes are present at every point in Kyle.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <section class="grid dashboard-grid" style="margin-top:18px;">
+    <div class="card map-shell">
+      <div>
+        <h2>Map + soil lookup</h2>
+        <p class="small">
+          Search for soil names, components, textures, drainage classes, or habitat terms. v0.9 still uses a map placeholder;
+          the GeoJSON is included for the future clickable map.
+        </p>
+        <div class="controls">
+          <input id="soilSearch" type="search" placeholder="Search soil, component, habitat…"/>
+          <button class="secondary" onclick="document.getElementById('soilSearch').value=''; filterSoils();">Clear</button>
+        </div>
+      </div>
+      <div class="map-placeholder" aria-label="Map placeholder"></div>
+    </div>
+
+    <div class="card">
+      <h2>Dashboard status</h2>
+      <div id="statCards" class="stat-grid"></div>
+      <div class="notice good-notice" style="margin-top:14px;">
+        <strong>Current science label:</strong> taxa and function evidence are confirmed in processed CLBJ/Texas-like
+        NMDC/NEON outputs, but remain regional analog evidence for Hays/Kyle.
+      </div>
+    </div>
+  </section>
+
+  <section class="card" style="margin-top:18px;">
+    <div class="tabs">
+      <button class="tab active" data-tab="overview">Overview</button>
+      <button class="tab" data-tab="soils">Soils</button>
+      <button class="tab" data-tab="taxa">Observed taxa</button>
+      <button class="tab" data-tab="functions">Functions</button>
+      <button class="tab" data-tab="evidence">Evidence</button>
+    </div>
+
+    <div id="panel-overview" class="tab-panel">
+      <h2>Overview: what the summaries mean</h2>
+      <p>
+        The function cards below are broad categories created from processed gene/product annotations.
+        They are useful for seeing major potential soil functions, but they are not direct measurements of activity.
+      </p>
+      <div id="functionCards" class="stat-grid"></div>
+      <h2 style="margin-top:22px;">Lab pedon support</h2>
+      <p class="small">Lab pedons provide measured soil context such as pH, chemistry, texture, and related properties where available.</p>
+      <div id="labTable"></div>
+    </div>
+
+    <div id="panel-soils" class="tab-panel" style="display:none;">
+      <h2>Soils: the local habitat frame</h2>
+      <p>
+        Soil data are the local foundation. They help explain what kind of microbial habitat and restoration setting is likely present.
+      </p>
+      <div id="soilTable"></div>
+    </div>
+
+    <div id="panel-taxa" class="tab-panel" style="display:none;">
+      <h2>Observed regional taxa</h2>
+      <div class="notice">
+        These are observed in processed regional analog outputs. They help identify microbial groups known from comparable datasets,
+        but they are not local Hays/Kyle confirmations.
+      </div>
+      <div id="taxaTable" style="margin-top:14px;"></div>
+    </div>
+
+    <div id="panel-functions" class="tab-panel" style="display:none;">
+      <h2>Functional potential</h2>
+      <div class="notice">
+        KO/EC/product-name hits indicate genes or annotations associated with potential functions.
+        They do not prove those functions were active at sampling time.
+      </div>
+      <h3>Top KEGG Orthology IDs</h3><p class="small">KO IDs are gene/function categories used for microbial functional annotation.</p><div id="koTable"></div>
+      <h3>Top Enzyme Commission IDs</h3><p class="small">EC IDs describe enzyme types. They are useful for broad biochemical potential.</p><div id="ecTable"></div>
+      <h3>Top product names</h3><p class="small">Product names are readable gene annotations. Many will be broad or hypothetical.</p><div id="productTable"></div>
+    </div>
+
+    <div id="panel-evidence" class="tab-panel" style="display:none;">
+      <h2>Evidence grades</h2>
+      <p>
+        Always check this section before making a claim. It separates local confirmation, regional observation,
+        soil-habitat inference, and general reference interpretation.
+      </p>
+      <div id="evidenceTable"></div>
+      <h2>Source notes + public rules</h2><div id="sourceNotes"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Research view. Large raw sequencing files are excluded from the public dashboard.</p>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

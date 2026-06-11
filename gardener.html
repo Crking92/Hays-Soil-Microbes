@@ -1,2 +1,99 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Gardener View | Hays/Kyle Soil + Microbial Habitat Dashboard</title><link rel="stylesheet" href="assets/style.css"/></head><body><header><h1>Gardener View</h1><p>A plain-language version focused on soil benefits, native plant planning, restoration, water, nutrients, and healthy living soil.</p><div class="badge-row"><span class="badge">Plain language</span><span class="badge">Soil benefits</span><span class="badge">Native plant matching</span><span class="badge">Restoration friendly</span></div><div class="mode-nav"><a href="index.html">Home</a><a href="research.html">Research view</a><a href="docs/limitations.md">Limitations</a></div></header><main><div id="gardenerError"></div><section class="callout-large"><h2>What am I looking at?</h2><p>This page translates soil and microbial data into practical land-care ideas. It does not tell you exactly what microbes are in your yard. Instead, it shows what the soil conditions are likely to support and what benefits regional microbial evidence suggests.</p><ol class="step-list"><li><strong>Search your soil or habitat.</strong> Look for soil names, texture, clay, limestone, drainage, or habitat words.</li><li><strong>Read the benefit cards.</strong> They explain why soil microbes matter for gardens and restoration.</li><li><strong>Use this for planning.</strong> Match plants and management to soil conditions instead of fighting the soil.</li><li><strong>Confirm locally when needed.</strong> For exact decisions, collect a soil test or local sample.</li></ol></section><section class="card" style="margin-top:18px;"><h2>Soil benefits explained</h2><div id="benefitCards" class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));"></div></section><section class="grid dashboard-grid" style="margin-top:18px;"><div class="card"><h2>Find a soil or habitat</h2><p class="small">Try words like clay, limestone, shallow, prairie, riparian, drainage, phosphorus, carbon, or restoration.</p><div class="controls"><input id="gardenerSearch" type="search" placeholder="Search soil benefits or habitat…"/><button class="secondary" onclick="document.getElementById('gardenerSearch').value=''; filterGardenerSoils();">Clear</button></div><div id="gardenerSoilTable" style="margin-top:14px;"></div></div><div class="card"><h2>What the microbial evidence means</h2><div class="notice good-notice"><strong>Simple version:</strong> regional data show microbial potential for cycling nutrients, decomposing organic matter, handling stress, and supporting soil structure. This is a clue, not a yard-by-yard test result.</div><h3 style="margin-top:16px;">Top benefit signals</h3><div id="gardenerFunctionCards" class="stat-grid"></div></div></section><section class="card" style="margin-top:18px;"><h2>Practical takeaways</h2><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));"><div class="benefit-card"><h3>Do not over-amend first</h3><p>Start by learning the soil texture, drainage, and pH. Many native plants prefer the soil as it is.</p></div><div class="benefit-card"><h3>Keep roots in the ground</h3><p>Living roots feed soil microbes. Native perennials, grasses, and diverse plantings help maintain soil life.</p></div><div class="benefit-card"><h3>Protect organic matter</h3><p>Mulch, leaf litter, compost used carefully, and reduced disturbance can support decomposition and nutrient cycling.</p></div><div class="benefit-card"><h3>Match plants to place</h3><p>Shallow limestone soils, deeper clays, and riparian soils support different plant communities and management strategies.</p></div></div></section></main><footer><p>Gardener view. For technical tables and evidence details, use the research view.</p></footer><script src="assets/gardener.js"></script></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Simple Gardener View | Hays/Kyle Soil Dashboard</title>
+  <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+<header>
+  <h1>Simple Gardener View</h1>
+  <p class="big-intro">
+    For people who are new to soil microbes, soil nutrients, and soil health.
+    This page explains the benefits first, then shows the data only after the basics make sense.
+  </p>
+  <div class="mode-nav">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research view</a>
+    <a href="#soil-search">Search soils</a>
+    <a href="#plain-words">Plain words</a>
+  </div>
+</header>
+
+<main>
+  <div id="gardenerError"></div>
+
+  <section class="beginner-hero">
+    <h2>Start here</h2>
+    <p id="oneSentence" class="big-intro"></p>
+    <div class="yes-no-grid">
+      <div class="yes-box">
+        <h3>The main idea</h3>
+        <p>
+          Healthy soil works like a living system. Plants feed soil life through roots and leaf litter.
+          Soil life helps recycle nutrients, build structure, and support resilient plant communities.
+        </p>
+      </div>
+      <div class="no-box">
+        <h3>Important limit</h3>
+        <p>
+          This dashboard does not test your exact yard. It combines local soil maps with regional microbial evidence
+          to explain what the soil is likely able to support.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>How to use this page</h2>
+    <div id="beginnerSteps" class="simple-grid"></div>
+  </section>
+
+  <section class="card" style="margin-top:18px;">
+    <h2>Why soil microbes matter in a garden or restoration site</h2>
+    <p class="small">You do not need to memorize microbe names. Focus on the jobs they help with.</p>
+    <div id="benefitCards" class="simple-grid"></div>
+  </section>
+
+  <section class="card" style="margin-top:18px;">
+    <h2>What the regional function evidence suggests</h2>
+    <p>
+      These cards summarize the kinds of microbial jobs detected in regional CLBJ/Texas-like processed data.
+      Think of them as “possible soil-life benefits to pay attention to,” not proof for a specific yard.
+    </p>
+    <div id="gardenerFunctionCards" class="simple-grid"></div>
+  </section>
+
+  <section id="soil-search" class="card" style="margin-top:18px;">
+    <h2>Search the soil records</h2>
+    <p>
+      Search for simple words. Try <span class="codeish">clay</span>, <span class="codeish">limestone</span>,
+      <span class="codeish">shallow</span>, <span class="codeish">drainage</span>, <span class="codeish">prairie</span>,
+      or a soil name if you know one.
+    </p>
+    <div class="controls">
+      <input id="gardenerSearch" type="search" placeholder="Search soil clues…"/>
+      <button class="secondary" onclick="document.getElementById('gardenerSearch').value=''; filterGardenerSoils();">Clear</button>
+    </div>
+    <div id="gardenerSoilTable" style="margin-top:14px;"></div>
+  </section>
+
+  <section class="card" style="margin-top:18px;">
+    <h2>Practical planting and care takeaways</h2>
+    <div id="decisionCards" class="simple-grid"></div>
+  </section>
+
+  <section id="plain-words" class="card" style="margin-top:18px;">
+    <h2>Plain words glossary</h2>
+    <p class="small">Quick definitions for common words in the dashboard.</p>
+    <div id="plainTerms" class="simple-grid"></div>
+  </section>
+</main>
+
+<footer>
+  <p>Simple gardener view. Use the research view for methods, tables, and evidence details.</p>
+</footer>
+<script src="assets/gardener.js"></script>
+</body>
+</html>

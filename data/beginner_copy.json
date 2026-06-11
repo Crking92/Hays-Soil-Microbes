@@ -1,0 +1,75 @@
+{
+  "page_title": "Soil Life Dashboard: Beginner Guide",
+  "one_sentence": "Healthy soil is alive. Tiny organisms help recycle nutrients, build soil structure, store carbon, and support resilient plants.",
+  "start_here": [
+    {
+      "title": "1. Look up the soil",
+      "plain": "Use the search box to look for soil names, clay, limestone, drainage, or habitat words.",
+      "why_it_matters": "Different soils hold water, nutrients, and roots differently. Plant choices work better when they fit the soil."
+    },
+    {
+      "title": "2. Read the benefit cards",
+      "plain": "The cards translate microbial science into garden benefits like nutrient cycling, drought resilience, and healthier roots.",
+      "why_it_matters": "You do not need to know microbe names to understand what healthy soil can do."
+    },
+    {
+      "title": "3. Use it for better decisions",
+      "plain": "Use the dashboard to ask: Is this soil shallow or deep? Clayey or rocky? Likely dry or moist? Better for prairie, woodland, or riparian plants?",
+      "why_it_matters": "Matching plants and management to soil is usually better than trying to force the soil to behave differently."
+    },
+    {
+      "title": "4. Know what this does not prove",
+      "plain": "The microbial data are regional evidence, not a test of your exact yard.",
+      "why_it_matters": "For exact fertilizer or soil-health decisions, use a soil test or local sample."
+    }
+  ],
+  "plain_terms": [
+    {
+      "term": "Soil microbes",
+      "plain": "Tiny living things in soil, including bacteria and fungi. Many are helpful, some are neutral, and a few can cause problems."
+    },
+    {
+      "term": "Nutrient cycling",
+      "plain": "The process of turning dead leaves, roots, compost, and organic matter into nutrients plants can use."
+    },
+    {
+      "term": "Functional potential",
+      "plain": "A clue that microbes may have genes for certain jobs, like breaking down organic matter or cycling nitrogen. It does not prove the job is happening right now."
+    },
+    {
+      "term": "Regional analog",
+      "plain": "A nearby or similar ecosystem used as a comparison. It helps us make educated guesses, but it is not the same as testing your exact soil."
+    },
+    {
+      "term": "Soil texture",
+      "plain": "How sandy, silty, or clayey a soil is. Texture affects water, roots, nutrients, and drainage."
+    },
+    {
+      "term": "pH",
+      "plain": "How acidic or alkaline soil is. Many Hill Country soils are alkaline because of limestone."
+    },
+    {
+      "term": "Organic matter",
+      "plain": "Dead plant material, compost, roots, and other carbon-rich material that feeds soil life and improves soil structure."
+    }
+  ],
+  "decision_cards": [
+    {
+      "situation": "Shallow, rocky, limestone soil",
+      "think_about": "Use plants adapted to low soil depth, fast drainage, heat, and alkaline conditions. Avoid assuming more fertilizer is the solution."
+    },
+    {
+      "situation": "Heavy clay soil",
+      "think_about": "Protect structure, avoid working it when wet, keep roots in the ground, and use plants that tolerate slower drainage."
+    },
+    {
+      "situation": "Riparian or lowland soil",
+      "think_about": "Consider flood tolerance, deeper roots, erosion control, and organic matter protection."
+    },
+    {
+      "situation": "Restoration planting",
+      "think_about": "Use soil texture, depth, and moisture clues to match native grasses, forbs, shrubs, and trees to the site."
+    }
+  ],
+  "safe_takeaway": "Use the dashboard as a soil-and-benefit guide, not as a prescription. It helps you ask better questions before planting, amending, irrigating, or restoring."
+}
