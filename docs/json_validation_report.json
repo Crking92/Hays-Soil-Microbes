@@ -1,0 +1,41 @@
+{
+  "status": "valid",
+  "checked_files": [
+    {
+      "file": "data/evidence_grade_lookup.json",
+      "bytes": 986,
+      "bad_tokens_remaining": 0
+    },
+    {
+      "file": "data/kyle_etj_soil_summary.json",
+      "bytes": 553285,
+      "bad_tokens_remaining": 0
+    },
+    {
+      "file": "data/lab_pedon_summary.json",
+      "bytes": 18591,
+      "bad_tokens_remaining": 0
+    },
+    {
+      "file": "data/microbial_function_summary_v06.json",
+      "bytes": 37109,
+      "bad_tokens_remaining": 0
+    },
+    {
+      "file": "data/microbial_habitat_rulebook.json",
+      "bytes": 3732,
+      "bad_tokens_remaining": 0
+    },
+    {
+      "file": "data/microbial_taxa_summary_v05.json",
+      "bytes": 279960,
+      "bad_tokens_remaining": 0
+    },
+    {
+      "file": "data/source_notes.json",
+      "bytes": 777,
+      "bad_tokens_remaining": 0
+    }
+  ],
+  "all_bad_tokens_remaining": 0
+}
