@@ -1,0 +1,63 @@
+{
+  "version": "public_story_rules_v1_3",
+  "purpose": "Plain-language translation layer for public soil story cards.",
+  "important_limit": "These rules translate mapped soil properties into habitat interpretations. They do not confirm exact microbes at a property.",
+  "soil_personalities": [
+    {
+      "id": "sticky_sponge",
+      "label": "Sticky Sponge",
+      "trigger": "clay >= 35% or mapped name/texture contains clay",
+      "plain_meaning": "Clayey soil can hold water and nutrients, but it can compact and become hard when dry.",
+      "actions": ["Keep soil covered", "Avoid working clay when wet", "Use deep-rooted native perennials"]
+    },
+    {
+      "id": "limestone_lunchbox",
+      "label": "Limestone Lunchbox",
+      "trigger": "pH >= 7.4, CaCO3 >= 5%, or mapped name suggests limestone/carbonate influence",
+      "plain_meaning": "Nutrients may be present, but high pH can keep some of them chemically locked up.",
+      "actions": ["Choose limestone-adapted natives", "Use soil tests before adding fertilizer", "Do not fight pH aggressively"]
+    },
+    {
+      "id": "thin_skin_hill_soil",
+      "label": "Thin-Skin Hill Soil",
+      "trigger": "restriction depth <= 50 cm, shallow/rock/lithic wording, or high rock signal",
+      "plain_meaning": "Thin soil over rock dries quickly and gives roots less room.",
+      "actions": ["Use drought-adapted natives", "Protect thin topsoil", "Expect slower establishment"]
+    },
+    {
+      "id": "flood_pulse_soil",
+      "label": "Flood-Pulse Soil",
+      "trigger": "poor drainage, hydric/flood/pond/riparian wording, or wet lowland context",
+      "plain_meaning": "Wet periods can lower oxygen and change nutrient cycling.",
+      "actions": ["Use wet-tolerant plants", "Protect streamside roots", "Avoid compaction when saturated"]
+    },
+    {
+      "id": "root_fed_prairie_soil",
+      "label": "Root-Fed Prairie Soil",
+      "trigger": "ecological site or plant indicators include prairie, grassland, bluestem, grama, Indiangrass, switchgrass, gamagrass, or perennial forbs",
+      "plain_meaning": "Grassland roots feed the soil food web and help build structure.",
+      "actions": ["Use diverse native grasses and forbs", "Keep living roots", "Avoid long-term bare soil"]
+    },
+    {
+      "id": "leaf_litter_woodland_soil",
+      "label": "Leaf-Litter Woodland Soil",
+      "trigger": "ecological site or indicators include oak, woodland, forest, savanna, trees, or woody species",
+      "plain_meaning": "Woody roots and leaf litter can support fungal decomposition and tree-root soil processes.",
+      "actions": ["Protect leaf litter where appropriate", "Avoid compacting tree root zones", "Keep woody soil cover stable"]
+    }
+  ],
+  "microbe_job_groups": [
+    {"id": "recyclers", "label": "Recyclers", "plain_meaning": "Break down dead leaves, roots, mulch, and compost."},
+    {"id": "nutrient_unlockers", "label": "Nutrient unlockers", "plain_meaning": "Help move nitrogen, phosphorus, sulfur, iron, and minerals into more usable forms."},
+    {"id": "root_helpers", "label": "Root helpers", "plain_meaning": "Live near roots and support nutrient exchange and root-zone structure."},
+    {"id": "soil_builders", "label": "Soil builders", "plain_meaning": "Help glue soil into crumbs so air and water can move."},
+    {"id": "drought_survivors", "label": "Drought survivors", "plain_meaning": "Persist through heat, drying, and wet-dry swings."},
+    {"id": "balance_keepers", "label": "Balance keepers", "plain_meaning": "Shift with water, oxygen, pH, clay, roots, and organic matter."}
+  ],
+  "evidence_labels": {
+    "mapped_soil": "Mapped soil evidence",
+    "regional_microbe": "Regional microbial evidence",
+    "prediction": "Soil-habitat prediction",
+    "needs_test": "Needs local test for exact confirmation"
+  }
+}

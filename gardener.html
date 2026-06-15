@@ -1,24 +1,24 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Gardener View | Soil Life Made Simple</title>
+  <title>How Soil Life Works | Hays/Kyle Soil-Life Dashboard</title>
   <link rel="stylesheet" href="assets/style.css"/>
 </head>
 <body>
 <header>
-  <h1>Soil Life Made Simple</h1>
+  <p class="eyebrow">Beginner path</p>
+  <h1>How Soil Life Works</h1>
   <p class="big-intro">
-    A beginner-friendly guide to what soil microbes do, why they matter, and how this dashboard can help with gardening,
-    native plants, and restoration.
+    Learn soil microbes by their jobs first. Names, genes, and technical tables come later only when you want them.
   </p>
   <div class="mode-nav">
-    <a href="index.html">Home</a>
-    <a href="map.html">Find my soil</a>
-    <a href="research.html">Research view</a>
-    <a href="#soil-lookup">Soil lookup</a>
+    <a href="index.html">Start Here</a>
+    <a href="gardener.html">How Soil Life Works</a>
+    <a href="map.html">Find My Soil</a>
+    <a href="actions.html">What Should I Do?</a>
+    <a href="research.html">Science + Evidence</a>
   </div>
 </header>
 
@@ -26,27 +26,30 @@
   <div id="gardenerError"></div>
 
   <section class="story-hero">
-    <h2>Start with the big idea</h2>
+    <p class="eyebrow dark">The big idea</p>
+    <h2>Plants feed microbes. Microbes help the soil work.</h2>
     <p id="coreMessage" class="big-intro"></p>
-    <div class="yes-no-grid">
-      <div class="yes-box">
-        <h3>Think of soil as habitat</h3>
-        <p>
-          Soil is where roots, water, air, minerals, organic matter, bacteria, fungi, and tiny soil animals interact.
-          A good garden or restoration plan works with that habitat instead of fighting it.
-        </p>
-      </div>
-      <div class="no-box">
-        <h3>Do not start with microbe names</h3>
-        <p>
-          Beginners do not need to memorize microbes. Start with the jobs: recycle nutrients, build structure,
-          help roots, buffer drought, and process organic matter.
-        </p>
-      </div>
+    <div class="soil-equation" aria-label="Simple soil life equation">
+      <span>Sunlight</span><span>→</span><span>Plant sugars</span><span>→</span><span>Root zone</span><span>→</span><span>Microbe jobs</span><span>→</span><span>Healthier soil</span>
     </div>
   </section>
 
   <section class="card">
+    <h2>Six tiny soil-worker jobs</h2>
+    <p>
+      Beginners do not need to memorize Latin names or gene codes. Start with what the organisms do.
+    </p>
+    <div class="translation-grid">
+      <div class="meaning-card job-card"><h3>1. Recyclers</h3><p>Break down dead leaves, roots, mulch, and compost.</p><div class="why"><strong>Like:</strong> tiny cleanup crews turning leftovers into soil food.</div></div>
+      <div class="meaning-card job-card"><h3>2. Nutrient unlockers</h3><p>Help move nutrients such as nitrogen, phosphorus, sulfur, iron, and minerals into usable forms.</p><div class="why"><strong>Like:</strong> opening locked food boxes for plants.</div></div>
+      <div class="meaning-card job-card"><h3>3. Root helpers</h3><p>Live near roots and help with nutrient exchange, root growth, and soil structure.</p><div class="why"><strong>Like:</strong> neighbors around the root grocery store.</div></div>
+      <div class="meaning-card job-card"><h3>4. Soil builders</h3><p>Help glue soil into crumbs so air and water can move.</p><div class="why"><strong>Like:</strong> builders making the soil into a sponge.</div></div>
+      <div class="meaning-card job-card"><h3>5. Drought survivors</h3><p>Survive heat, drying, and wet-dry swings common in Central Texas.</p><div class="why"><strong>Like:</strong> tiny workers that can pause and restart after rain.</div></div>
+      <div class="meaning-card job-card"><h3>6. Balance keepers</h3><p>Change with clay, limestone, water, oxygen, roots, and organic matter.</p><div class="why"><strong>Like:</strong> different teams showing up for different soil conditions.</div></div>
+    </div>
+  </section>
+
+  <section class="card" style="margin-top:18px;">
     <h2>The soil food web in plain language</h2>
     <p>
       The soil food web is the living network belowground. Plants feed microbes. Microbes recycle organic matter.
@@ -56,17 +59,15 @@
   </section>
 
   <section class="card" style="margin-top:18px;">
-    <h2>What this means for a gardener or land steward</h2>
-    <p>
-      These are the useful benefits. The data supports these ideas, but the teaching comes first.
-    </p>
+    <h2>Useful benefits for gardeners, land stewards, and restoration work</h2>
+    <p>These cards translate soil-health benefits into simple public language.</p>
     <div id="benefitCards" class="translation-grid"></div>
   </section>
 
   <section class="card" style="margin-top:18px;">
     <h2>Translate the function data into soil-life jobs</h2>
     <p>
-      Instead of showing gene tables first, this section translates the regional function data into plain-language soil jobs.
+      This section uses the regional microbial function file, but it hides gene-code language until someone asks for it.
     </p>
     <div id="functionTranslations" class="translation-grid"></div>
 
@@ -82,8 +83,9 @@
   </section>
 
   <section class="card" style="margin-top:18px;">
-    <h2>Practical actions that support the soil food web</h2>
+    <h2>Simple actions that support the soil food web</h2>
     <div id="simpleActions" class="use-case-grid"></div>
+    <p style="margin-top:14px;"><a href="actions.html">Open the full action guide</a></p>
   </section>
 
   <section class="card" style="margin-top:18px;">
@@ -92,9 +94,9 @@
   </section>
 
   <section id="soil-lookup" class="card" style="margin-top:18px;">
-    <h2>Optional: look at the soil records</h2>
+    <h2>Optional: look at soil records</h2>
     <p>
-      This part is intentionally lower on the page. Use it when you want to connect the teaching above to actual soil records.
+      This part stays lower on the page on purpose. Use it after the simple story makes sense.
     </p>
     <div class="controls">
       <input id="gardenerSearch" type="search" placeholder="Search clay, limestone, shallow, drainage…"/>
@@ -112,7 +114,7 @@
 </main>
 
 <footer>
-  <p>Gardener view: teaching first, data second. Use the research view for full tables and methods.</p>
+  <p>How Soil Life Works: teaching first, data second.</p>
 </footer>
 <script src="assets/gardener.js"></script>
 </body>

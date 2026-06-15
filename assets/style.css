@@ -235,3 +235,119 @@
   color: var(--muted);
   margin-bottom: 10px;
 }
+
+/* v1.3 public story-first redesign */
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: .82rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-weight: 850;
+  color: rgba(255,255,255,.78);
+}
+
+.eyebrow.dark {
+  color: var(--accent);
+}
+
+.public-choice .light-card,
+.choice-card.light-card {
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.choice-card.light-card h2 {
+  color: var(--accent);
+}
+
+.choice-card.light-card p {
+  color: var(--muted);
+}
+
+.choice-card.light-card a {
+  background: var(--accent);
+  color: #fff;
+}
+
+.soil-equation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.soil-equation span {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 11px;
+  font-weight: 800;
+  box-shadow: var(--shadow);
+}
+
+.job-card h3::first-letter {
+  color: var(--accent);
+}
+
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.story-result {
+  border-left: 7px solid var(--good);
+}
+
+.soil-story-banner {
+  background: linear-gradient(135deg, #edf7f1, #fff8ea);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 14px;
+  margin: 10px 0 14px;
+  font-size: 1.04rem;
+}
+
+.public-story-card {
+  background: #fff;
+}
+
+.public-story-card ul {
+  margin: 6px 0 0;
+  padding-left: 20px;
+}
+
+.public-story-card li {
+  margin: 5px 0;
+}
+
+.action-highlight {
+  border-left: 5px solid var(--good);
+  background: #f8fbf5;
+}
+
+.evidence-card {
+  border-left: 5px solid var(--warn);
+  background: #fffaf3;
+}
+
+.result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.result-actions a {
+  text-decoration: none;
+}
+
+@media print {
+  header, .mode-nav, #map, .lookup-panel > .card, footer, .result-actions, .details-lite summary { display: none !important; }
+  main { padding: 0; }
+  .location-layout { display: block; }
+  .lookup-result, .card, .result-item { box-shadow: none; border-color: #999; }
+  body { background: #fff; }
+}
