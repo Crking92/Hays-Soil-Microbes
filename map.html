@@ -5,15 +5,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Find My Soil | Hays/Kyle Soil-Life Dashboard</title>
 <link rel="stylesheet" href="assets/style.css"/>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
 </head>
 <body>
 <header>
   <p class="eyebrow">Interactive soil story map</p>
   <h1>Find My Soil</h1>
   <p class="big-intro">
-    Click the map, use your location, enter coordinates, or search an address. The result is now a soil story card:
-    soil type, plant meaning, likely soil-life jobs, actions, and evidence level.
+    Click a soil shape, use coordinates, or search an address. The result explains the mapped soil in plain language:
+    soil type, root meaning, likely soil-life jobs, actions, and evidence level.
   </p>
   <div class="mode-nav">
     <a href="index.html">Start Here</a>
@@ -28,24 +27,34 @@
   <section class="beginner-hero">
     <h2>How to read the result</h2>
     <div class="help-strip">
-      <div class="help-item"><strong>1. Soil story</strong> A plain-language summary of the mapped soil.</div>
-      <div class="help-item"><strong>2. Plant meaning</strong> How clay, limestone, depth, drainage, and organic matter may affect roots.</div>
-      <div class="help-item"><strong>3. Microbe jobs</strong> Likely soil-life functions, grouped by job instead of gene code.</div>
-      <div class="help-item"><strong>4. Evidence label</strong> A reminder that this is a habitat prediction, not a direct microbe test.</div>
+      <div class="help-item"><strong>Soil story</strong> A short, plain-language description of the mapped soil.</div>
+      <div class="help-item"><strong>Root meaning</strong> What clay, limestone, drainage, depth, and organic matter may mean for plants.</div>
+      <div class="help-item"><strong>Microbe jobs</strong> Soil-life functions grouped by job, not gene code.</div>
+      <div class="help-item"><strong>Evidence label</strong> A reminder that this is a habitat prediction, not a direct microbe test.</div>
     </div>
   </section>
 
   <section class="location-layout" style="margin-top:18px;">
     <div class="card">
-      <h2>Interactive map</h2>
+      <h2>Soil story map</h2>
       <div class="guide-box">
         <h3>Choose map scope</h3>
         <select id="layerSelect"></select>
         <p id="layerScopeNote" class="small"></p>
       </div>
-      <p id="mapStatus" class="small">Loading soil polygons…</p>
+      <p id="mapStatus" class="small">Loading soil polygons...</p>
       <div id="mapError"></div>
-      <div id="map"></div>
+      <div id="map" class="svg-map" role="application" aria-label="Clickable soil polygon map">
+        <div class="map-loading">Loading map...</div>
+      </div>
+      <div class="map-legend">
+        <span><b class="legend-swatch clay"></b> clay</span>
+        <span><b class="legend-swatch limestone"></b> limestone/alkaline</span>
+        <span><b class="legend-swatch shallow"></b> shallow/rocky</span>
+        <span><b class="legend-swatch wet"></b> wet/flood-pulse</span>
+        <span><b class="legend-swatch general"></b> general mapped soil</span>
+      </div>
+      <p class="small">This version uses a built-in SVG map, so it no longer depends on Leaflet or online map tiles. Address search still requires internet.</p>
     </div>
 
     <div class="lookup-panel">
@@ -60,7 +69,7 @@
           <input id="addressInput" type="search" placeholder="Example: Kyle City Hall, Kyle, TX"/>
           <button id="addressButton">Search</button>
         </div>
-        <p id="addressStatus" class="status-line">Address search uses OpenStreetMap/Nominatim.</p>
+        <p id="addressStatus" class="status-line">Address search uses OpenStreetMap/Nominatim and requires internet.</p>
 
         <h3>Enter coordinates</h3>
         <div class="coord-row">
@@ -69,13 +78,13 @@
           <button id="coordButton">Lookup</button>
         </div>
         <p id="coordStatus" class="status-line">Use decimal degrees, for example 29.99, -97.88.</p>
-        <button id="fitButton" class="secondary">Zoom to soil layer</button>
+        <button id="fitButton" class="secondary">Reset map view</button>
       </div>
 
       <div id="lookupResult" class="lookup-result story-result">
         <p class="result-title">No location selected yet</p>
-        <p class="result-subtitle">Click the map or use one of the lookup tools above.</p>
-        <div class="result-item"><strong>What you will get</strong> A soil story, plain soil clues, plant meaning, likely microbe jobs, actions, and an evidence label.</div>
+        <p class="result-subtitle">Click a soil shape or use one of the lookup tools above.</p>
+        <div class="result-item"><strong>What you will get</strong> A soil story, root meaning, likely microbe jobs, actions, and an evidence label.</div>
       </div>
     </div>
   </section>
@@ -84,7 +93,7 @@
 <footer>
   <p>Location lookup is approximate and depends on the soil polygon layer loaded in the dashboard.</p>
 </footer>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="data/map_embedded.js"></script>
 <script src="assets/map.js"></script>
 </body>
 </html>

@@ -351,3 +351,143 @@
   .lookup-result, .card, .result-item { box-shadow: none; border-color: #999; }
   body { background: #fff; }
 }
+
+/* v1.4 research simplification and no-CDN SVG map */
+.research-hero .big-intro {
+  color: #263324;
+}
+
+.claim-card h3 {
+  margin-top: 0;
+}
+
+.svg-map {
+  min-height: 520px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  background: linear-gradient(135deg, #edf2e7, #fffaf0);
+  overflow: hidden;
+  position: relative;
+}
+
+.svg-map svg {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  display: block;
+  cursor: crosshair;
+}
+
+.map-loading {
+  min-height: 520px;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.soil-poly {
+  stroke: #38592f;
+  stroke-width: 1.1;
+  fill: #7a9b62;
+  fill-opacity: .34;
+  vector-effect: non-scaling-stroke;
+  transition: fill-opacity .12s ease, stroke-width .12s ease;
+}
+
+.soil-poly:hover {
+  fill-opacity: .62;
+  stroke-width: 2.4;
+}
+
+.soil-poly.selected {
+  fill-opacity: .78;
+  stroke: #1f321c;
+  stroke-width: 3.5;
+}
+
+.soil-poly.clay { fill: #96724b; }
+.soil-poly.limestone { fill: #8f8a6a; }
+.soil-poly.shallow { fill: #9b8062; }
+.soil-poly.wet { fill: #5b8aa8; }
+.soil-poly.general { fill: #7a9b62; }
+
+.map-marker {
+  fill: #1f321c;
+  stroke: white;
+  stroke-width: 3;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+
+.map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.legend-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+  vertical-align: -2px;
+  margin-right: 4px;
+}
+
+.legend-swatch.clay { background: #96724b; }
+.legend-swatch.limestone { background: #8f8a6a; }
+.legend-swatch.shallow { background: #9b8062; }
+.legend-swatch.wet { background: #5b8aa8; }
+.legend-swatch.general { background: #7a9b62; }
+
+.soil-story-banner {
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--accent);
+  background: #f7fbf3;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.result-actions a {
+  text-decoration: none;
+}
+
+.action-highlight {
+  border-left: 5px solid var(--good);
+}
+
+.evidence-card {
+  border-left: 5px solid var(--warn);
+}
+
+.mini-details summary {
+  font-size: .92rem;
+  padding: 9px 10px;
+}
+
+@media print {
+  header, footer, .mode-nav, .lookup-panel .card:first-child, .map-legend, #map, #mapStatus, #mapError {
+    display: none !important;
+  }
+  main, .location-layout, .lookup-panel, .lookup-result {
+    display: block !important;
+    width: 100% !important;
+  }
+  .lookup-result {
+    box-shadow: none;
+    border: none;
+  }
+}

@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,10 +8,10 @@
 </head>
 <body>
 <header>
-  <p class="eyebrow">Technical path</p>
+  <p class="eyebrow">Research path</p>
   <h1>Science + Evidence</h1>
   <p class="big-intro">
-    Technical data, methods, evidence grades, and limitations. Use this view when you need the science behind the public soil stories.
+    This page keeps the science, but explains it in layers: plain meaning first, evidence strength second, raw tables last.
   </p>
   <div class="mode-nav">
     <a href="index.html">Start Here</a>
@@ -27,116 +26,165 @@
 <main>
   <div id="appError"></div>
 
-  <section class="story-hero">
-    <h2>Read this before opening the tables</h2>
+  <section class="story-hero research-hero">
+    <h2>The simple research story</h2>
+    <p class="big-intro">
+      The dashboard combines mapped soil evidence with regional microbial evidence. It is strongest at explaining
+      <strong>what the soil habitat is like</strong> and more cautious when explaining <strong>which microbes may be active there</strong>.
+    </p>
     <div class="help-strip">
       <div class="help-item">
-        <strong>1. Soil is the local habitat layer</strong>
-        Soil maps and lab pedons describe the physical and chemical setting: texture, pH, clay, carbonate, drainage, depth, and related clues.
+        <strong>Local soil layer</strong>
+        Soil maps and lab pedons describe texture, clay, pH, carbonate, drainage, depth, and organic matter.
       </div>
       <div class="help-item">
-        <strong>2. Microbial data are regional analog evidence</strong>
-        NEON/NMDC records show what was observed in similar regional datasets, not proof for every point in Hays County.
+        <strong>Regional microbe layer</strong>
+        Regional metagenome datasets show microbial names and gene-function signals observed in similar Texas soil data.
       </div>
       <div class="help-item">
-        <strong>3. Function data mean potential</strong>
-        KO, EC, and product-name hits suggest genetic potential, not measured activity.
+        <strong>Prediction layer</strong>
+        Habitat rules translate soil clues into likely soil-life jobs. These are predictions, not direct site tests.
       </div>
       <div class="help-item">
-        <strong>4. Use evidence grades</strong>
-        Do not make a local confirmation claim unless the data layer is actually local.
+        <strong>Public claim layer</strong>
+        Use evidence grades before saying something is local, confirmed, regional, or predicted.
       </div>
     </div>
   </section>
 
   <section class="card">
-    <h2>What this dashboard is trying to answer</h2>
+    <h2>What this page can help you check</h2>
     <div class="use-case-grid">
-      <div class="use-case-card"><strong>What kind of soil habitat is mapped here?</strong><p>Use the soil and map pages.</p></div>
-      <div class="use-case-card"><strong>What soil-life functions might this habitat support?</strong><p>Use the function translations and evidence notes.</p></div>
-      <div class="use-case-card"><strong>What regional microbes/functions have been observed?</strong><p>Use the taxa and function tabs, but keep the regional label.</p></div>
-      <div class="use-case-card"><strong>What can I say publicly?</strong><p>Use the evidence tab and limitations language.</p></div>
+      <div class="use-case-card"><strong>What is local?</strong><p>Mapped soils, soil properties, and local soil-habitat summaries.</p></div>
+      <div class="use-case-card"><strong>What is regional?</strong><p>Microbial taxa and gene-function annotations from regional analog datasets.</p></div>
+      <div class="use-case-card"><strong>What is inferred?</strong><p>The link between soil type and likely soil-life jobs.</p></div>
+      <div class="use-case-card"><strong>What should stay cautious?</strong><p>Exact microbe names, exact plant-root partners, and exact activity at one property.</p></div>
     </div>
   </section>
 
   <section class="grid dashboard-grid" style="margin-top:18px;">
-    <div class="card map-shell">
-      <div>
-        <h2>Map + soil lookup</h2>
-        <p class="small">
-          For location-based use, open the map page. This lookup table is mainly for checking the summarized soil records.
-        </p>
-        <div class="controls">
-          <input id="soilSearch" type="search" placeholder="Search soil, component, habitat…"/>
-          <button class="secondary" onclick="document.getElementById('soilSearch').value=''; filterSoils();">Clear</button>
-          <a href="map.html"><button type="button">Open map lookup</button></a>
-        </div>
-      </div>
-      <div class="map-placeholder" aria-label="Map placeholder"></div>
+    <div class="card">
+      <h2>Dashboard evidence snapshot</h2>
+      <div id="statCards" class="stat-grid"></div>
     </div>
 
-    <div class="card">
-      <h2>Dashboard status</h2>
-      <div id="statCards" class="stat-grid"></div>
-      <div class="notice good-notice" style="margin-top:14px;">
-        <strong>Current science label:</strong> taxa and function evidence are confirmed in processed CLBJ/Texas-like
-        NMDC/NEON outputs, but remain regional analog evidence for Hays/Kyle.
+    <div class="card claim-card">
+      <h2>Claim checker</h2>
+      <div class="yes-no-grid">
+        <div class="yes-box">
+          <h3>Safe wording</h3>
+          <ul id="canSayList"></ul>
+        </div>
+        <div class="no-box">
+          <h3>Avoid saying</h3>
+          <ul id="shouldNotSayList"></ul>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="card" style="margin-top:18px;">
     <div class="tabs">
-      <button class="tab active" data-tab="overview">Overview</button>
-      <button class="tab" data-tab="soils">Soils</button>
-      <button class="tab" data-tab="taxa">Observed taxa</button>
-      <button class="tab" data-tab="functions">Functions</button>
-      <button class="tab" data-tab="evidence">Evidence</button>
+      <button class="tab active" data-tab="summary">Plain-English Summary</button>
+      <button class="tab" data-tab="soils">Soil Evidence</button>
+      <button class="tab" data-tab="jobs">Microbe Jobs</button>
+      <button class="tab" data-tab="taxa">Microbe Names</button>
+      <button class="tab" data-tab="evidence">Evidence Rules</button>
+      <button class="tab" data-tab="raw">Raw Tables</button>
     </div>
 
-    <div id="panel-overview" class="tab-panel">
-      <h2>Overview: function summaries translated first</h2>
-      <p>
-        The cards below summarize broad functional-potential signals. They are useful for interpretation, but not direct measurements.
-      </p>
-      <div id="functionCards" class="stat-grid"></div>
+    <div id="panel-summary" class="tab-panel">
+      <h2>How to read the science</h2>
+      <div class="translation-grid">
+        <div class="meaning-card">
+          <h3>1. Soil is the habitat</h3>
+          <p>Clay, limestone, drainage, depth, pH, and organic matter shape what roots and microbes can do.</p>
+        </div>
+        <div class="meaning-card">
+          <h3>2. Roots feed the system</h3>
+          <p>Living roots leak sugars and other compounds. That root food supports bacteria, fungi, and other soil organisms.</p>
+        </div>
+        <div class="meaning-card">
+          <h3>3. Microbes have jobs</h3>
+          <p>The useful public story is not memorizing names. It is understanding jobs: recycling, unlocking nutrients, building structure, and surviving stress.</p>
+        </div>
+        <div class="meaning-card">
+          <h3>4. Evidence has levels</h3>
+          <p>Mapped soil evidence is not the same as local DNA evidence. The dashboard labels that difference so claims stay honest.</p>
+        </div>
+      </div>
 
-      <details class="reveal-box">
-        <summary>Show lab pedon support table</summary>
+      <details class="reveal-box" open>
+        <summary>Show the main research translation</summary>
         <div class="reveal-content">
-          <p class="small">Lab pedons provide measured context such as pH, texture, chemistry, and layer counts where available.</p>
-          <div id="labTable"></div>
+          <div id="functionCards" class="simple-grid"></div>
         </div>
       </details>
     </div>
 
     <div id="panel-soils" class="tab-panel" style="display:none;">
-      <h2>Soils: local habitat frame</h2>
+      <h2>Soil evidence: the strongest local layer</h2>
       <p>
-        This table is supporting evidence. For lay users, the map and gardener view are easier places to start.
+        These records explain the mapped soil habitat. For public use, focus on soil name, texture, pH, carbonate, drainage,
+        root depth, organic matter, and plant-community clues.
       </p>
-      <details class="reveal-box" open>
-        <summary>Show soil summary table</summary>
+      <div class="controls">
+        <input id="soilSearch" type="search" placeholder="Search soil name, texture, habitat, plant indicator..."/>
+        <button id="soilClear" class="secondary">Clear</button>
+        <a href="map.html"><button type="button">Open map lookup</button></a>
+      </div>
+      <div id="soilSimpleTable" style="margin-top:12px;"></div>
+      <details class="reveal-box">
+        <summary>Show full soil table</summary>
         <div class="reveal-content"><div id="soilTable"></div></div>
+      </details>
+      <details class="reveal-box">
+        <summary>Show lab pedon support table</summary>
+        <div class="reveal-content"><div id="labTable"></div></div>
+      </details>
+    </div>
+
+    <div id="panel-jobs" class="tab-panel" style="display:none;">
+      <h2>Microbe jobs: the public-facing research layer</h2>
+      <p>
+        Function categories are best explained as possible jobs. Gene annotations suggest potential. They do not prove that the job is happening at one exact location right now.
+      </p>
+      <div id="jobCards" class="simple-grid"></div>
+      <details class="reveal-box">
+        <summary>Show habitat rulebook</summary>
+        <div class="reveal-content"><div id="habitatTable"></div></div>
       </details>
     </div>
 
     <div id="panel-taxa" class="tab-panel" style="display:none;">
-      <h2>Observed regional taxa</h2>
+      <h2>Microbe names: useful, but easy to overstate</h2>
       <div class="notice">
-        These taxa are observed in processed regional analog outputs. They are not local Hays/Kyle confirmations.
+        Taxa tables show regional microbial names from processed datasets. They do not prove that a named microbe is present at a specific park, yard, root, or restoration site.
       </div>
+      <div id="taxaSummary" class="translation-grid" style="margin-top:14px;"></div>
       <details class="reveal-box">
-        <summary>Show observed taxa table</summary>
+        <summary>Show top regional taxa table</summary>
         <div class="reveal-content"><div id="taxaTable"></div></div>
       </details>
     </div>
 
-    <div id="panel-functions" class="tab-panel" style="display:none;">
-      <h2>Functional potential</h2>
-      <div class="notice">
-        KO/EC/product-name hits indicate genes or annotations associated with possible functions. They do not prove activity.
-      </div>
+    <div id="panel-evidence" class="tab-panel" style="display:none;">
+      <h2>Evidence rules: what the dashboard can and cannot prove</h2>
+      <p>Use this before making public-facing claims.</p>
+      <div id="evidenceCards" class="simple-grid"></div>
+      <details class="reveal-box" open>
+        <summary>Show evidence grade table</summary>
+        <div class="reveal-content"><div id="evidenceTable"></div></div>
+      </details>
+      <details class="reveal-box">
+        <summary>Show source notes</summary>
+        <div class="reveal-content"><div id="sourceNotes"></div></div>
+      </details>
+    </div>
+
+    <div id="panel-raw" class="tab-panel" style="display:none;">
+      <h2>Raw technical tables</h2>
+      <p>These are here for audit and review. They should not be the first thing the public sees.</p>
 
       <details class="reveal-box">
         <summary>Show top KEGG Orthology IDs</summary>
@@ -157,25 +205,18 @@
       <details class="reveal-box">
         <summary>Show top product names</summary>
         <div class="reveal-content">
-          <p class="small">Product names are readable gene annotations. Many will be broad or hypothetical.</p>
+          <p class="small">Product names are readable gene annotations. Many are broad, incomplete, or hypothetical.</p>
           <div id="productTable"></div>
         </div>
       </details>
-    </div>
-
-    <div id="panel-evidence" class="tab-panel" style="display:none;">
-      <h2>Evidence grades</h2>
-      <p>Use this section before making claims in public materials.</p>
-      <div id="evidenceTable"></div>
-      <h2>Source notes + public rules</h2>
-      <div id="sourceNotes"></div>
     </div>
   </section>
 </main>
 
 <footer>
-  <p>Science + Evidence: interpretation first, dense data hidden until opened.</p>
+  <p>Science + Evidence: plain meaning first, evidence strength second, raw data last.</p>
 </footer>
+<script src="data/research_embedded.js"></script>
 <script src="assets/app.js"></script>
 </body>
 </html>
