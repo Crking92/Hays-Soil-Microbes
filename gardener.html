@@ -42,7 +42,41 @@
     </div>
   </section>
 
-  <section class="coach-layout">
+  <section class="card guided-coach-card" id="guidedCoach">
+    <div class="guided-header">
+      <div>
+        <p class="eyebrow dark">Click-through mode</p>
+        <h2>Learn your soil one choice at a time</h2>
+        <p>Use this guided path if you are new to gardening. Each step asks one simple question, explains why it matters, and builds your plan as you go.</p>
+      </div>
+      <div class="guided-score" id="guidedStepBadge">Step 1 of 7</div>
+    </div>
+
+    <div class="guided-progress" aria-hidden="true">
+      <div id="guidedProgressFill"></div>
+    </div>
+
+    <div class="guided-shell">
+      <div id="guidedCoachPanel" class="guided-panel" aria-live="polite"></div>
+      <aside class="guided-side">
+        <h3>Your clues so far</h3>
+        <div id="guidedClueStack" class="clue-stack"></div>
+        <div class="mini-coach-tip">
+          <strong>Beginner rule:</strong> one clue is a hint. Two or three clues pointing the same way make a better soil story.
+        </div>
+      </aside>
+    </div>
+
+    <div class="guided-nav">
+      <button id="guidedBack" type="button" class="secondary">Back</button>
+      <button id="guidedNext" type="button">Next</button>
+      <button id="guidedRestart" type="button" class="secondary">Start over</button>
+      <a href="#fullCoach" class="jump-link">Show all questions at once</a>
+    </div>
+  </section>
+
+
+  <section class="coach-layout" id="fullCoach">
     <div class="coach-inputs">
       <section class="card coach-step">
         <h2>1. What are you trying to do?</h2>
