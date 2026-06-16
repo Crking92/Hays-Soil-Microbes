@@ -3,38 +3,143 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Soil Habitat Translator | Hays/Kyle Soil-Life Dashboard</title>
+  <title>My Soil Coach | Hays/Kyle Soil Habitat Translator</title>
   <link rel="stylesheet" href="assets/style.css"/>
 </head>
 <body>
 <header>
-  <p class="eyebrow">Beginner path</p>
-  <h1>Soil Habitat Translator</h1>
+  <p class="eyebrow">Beginner-first garden tool</p>
+  <h1>My Soil Coach</h1>
   <p class="big-intro">
-    Learn soil habitat first: what roots feel, what tiny soil workers may be doing, and what broad actions help.
+    Start with your garden goal and what you see in the yard. The coach turns those clues into a plain soil habitat story,
+    first actions, things to avoid, simple tests, and beginner planting structure.
   </p>
   <div class="mode-nav">
     <a href="index.html">Start Here</a>
-    <a href="gardener.html">How Soil Life Works</a>
+    <a href="gardener.html">My Soil Coach</a>
     <a href="map.html">Find My Soil</a>
     <a href="actions.html">What Should I Do?</a>
-    <a href="research.html">Science + Evidence</a>
+    <a href="research.html">Why We Think This</a>
   </div>
 </header>
 
 <main>
+  <div id="coachError"></div>
   <div id="gardenerError"></div>
 
-  <section class="story-hero">
-    <p class="eyebrow dark">The big idea</p>
-    <h2>Plants feed microbes. Microbes help the soil work.</h2>
-    <p id="coreMessage" class="big-intro"></p>
-    <div class="soil-equation" aria-label="Simple soil life equation">
-      <span>Sunlight</span><span>→</span><span>Plant sugars</span><span>→</span><span>Root zone</span><span>→</span><span>Microbe jobs</span><span>→</span><span>Healthier soil</span>
+  <section class="story-hero coach-hero">
+    <p class="eyebrow dark">Beginner mode</p>
+    <h2>Tell the dashboard what you are trying to do.</h2>
+    <p class="big-intro">
+      You do not need to know pH, CEC, taxonomy, gene hits, or soil series names to start. Begin with a goal,
+      pick the symptoms you see, then let the tool translate the likely soil habitat.
+    </p>
+    <div class="help-strip">
+      <div class="help-item"><strong>Step 1</strong> Pick your garden goal.</div>
+      <div class="help-item"><strong>Step 2</strong> Pick what you notice in the soil or plants.</div>
+      <div class="help-item"><strong>Step 3</strong> Add sunlight, water, season, and soil clues.</div>
+      <div class="help-item"><strong>Step 4</strong> Use the simple plan, then confirm with a backyard test.</div>
     </div>
   </section>
 
-  <section class="card">
+  <section class="coach-layout">
+    <div class="coach-inputs">
+      <section class="card coach-step">
+        <h2>1. What are you trying to do?</h2>
+        <p class="small">Choose one main goal. You can change it anytime.</p>
+        <div id="coachGoalCards" class="option-grid"></div>
+      </section>
+
+      <section class="card coach-step">
+        <h2>2. What do you notice?</h2>
+        <p class="small">Pick any that fit. These are clues, not a final diagnosis.</p>
+        <div id="coachObservationCards" class="option-grid observation-grid"></div>
+      </section>
+
+      <section class="card coach-step">
+        <h2>3. Add simple garden basics</h2>
+        <div class="coach-form-grid">
+          <div>
+            <label for="coachSun" class="form-label">Sunlight</label>
+            <select id="coachSun">
+              <option value="">Not sure</option>
+              <option value="full sun">Full sun</option>
+              <option value="part sun">Part sun</option>
+              <option value="shade">Mostly shade</option>
+            </select>
+          </div>
+          <div>
+            <label for="coachWater" class="form-label">Water pattern</label>
+            <select id="coachWater">
+              <option value="">Not sure</option>
+              <option value="dry">Usually dry</option>
+              <option value="average">Average after rain</option>
+              <option value="wet">Stays wet after rain</option>
+              <option value="runoff">Water runs off fast</option>
+            </select>
+          </div>
+          <div>
+            <label for="coachSoilGuess" class="form-label">Soil clue</label>
+            <select id="coachSoilGuess">
+              <option value="">Not sure</option>
+              <option value="clay">Sticky clay</option>
+              <option value="shallow">Rocky or shallow</option>
+              <option value="limestone">Limestone / alkaline</option>
+              <option value="wet">Wet low spot</option>
+              <option value="cover">Bare or crusty</option>
+            </select>
+          </div>
+          <div>
+            <label for="coachSpace" class="form-label">Garden size</label>
+            <select id="coachSpace">
+              <option value="small starter bed">Small starter bed</option>
+              <option value="front yard bed">Front yard bed</option>
+              <option value="large meadow area">Large meadow area</option>
+              <option value="tree or shrub zone">Tree or shrub zone</option>
+              <option value="slope or drainage area">Slope or drainage area</option>
+            </select>
+          </div>
+          <div>
+            <label for="coachSeason" class="form-label">Season</label>
+            <select id="coachSeason">
+              <option value="">Use current season</option>
+              <option value="spring">Spring</option>
+              <option value="summer">Summer</option>
+              <option value="fall">Fall</option>
+              <option value="winter">Winter</option>
+            </select>
+          </div>
+        </div>
+        <div class="result-actions" style="margin-top:14px;">
+          <a href="map.html"><button type="button">Find my mapped soil</button></a>
+          <button id="coachReset" type="button" class="secondary">Reset coach</button>
+        </div>
+      </section>
+
+      <section class="card coach-step">
+        <h2>4. Backyard tests</h2>
+        <p>
+          These make the soil story more reliable. They are simple checks, not lab tests.
+        </p>
+        <div id="backyardTestCards" class="test-grid"></div>
+      </section>
+    </div>
+
+    <aside class="coach-output sticky-output" aria-live="polite">
+      <section class="card">
+        <h2>Your soil coach result</h2>
+        <div id="coachResult" class="coach-result"></div>
+      </section>
+    </aside>
+  </section>
+
+  <section class="card" style="margin-top:18px;">
+    <h2>Seasonal beginner plan for Central Texas</h2>
+    <p>Use the season as a filter. The same soil action can be helpful or stressful depending on timing.</p>
+    <div id="seasonCards" class="season-grid"></div>
+  </section>
+
+  <section class="card" style="margin-top:18px;">
     <h2>Six tiny soil-worker jobs</h2>
     <p>
       Beginners do not need to memorize Latin names or gene codes. Start with what the organisms do.
@@ -51,10 +156,10 @@
 
   <section class="card" style="margin-top:18px;">
     <h2>The soil food web in plain language</h2>
-    <p>
-      The soil food web is the living network belowground. Plants feed microbes. Microbes recycle organic matter.
-      Tiny predators release nutrients. Roots and fungi help build structure.
-    </p>
+    <p id="coreMessage" class="big-intro"></p>
+    <div class="soil-equation" aria-label="Simple soil life equation">
+      <span>Sunlight</span><span>→</span><span>Plant sugars</span><span>→</span><span>Root zone</span><span>→</span><span>Microbe jobs</span><span>→</span><span>Healthier soil</span>
+    </div>
     <div id="foodWebSteps" class="story-path"></div>
   </section>
 
@@ -65,7 +170,7 @@
   </section>
 
   <section class="card" style="margin-top:18px;">
-    <h2>Translate the function data into soil-life jobs</h2>
+    <h2>Translate function data into soil-life jobs</h2>
     <p>
       This section uses the regional microbial function file, but it hides gene-code language until someone asks for it.
     </p>
@@ -99,6 +204,7 @@
       This part stays lower on the page on purpose. Use it after the simple story makes sense.
     </p>
     <div class="controls">
+      <label for="gardenerSearch" class="form-label">Search soil records</label>
       <input id="gardenerSearch" type="search" placeholder="Search clay, limestone, shallow, drainage…"/>
       <button class="secondary" onclick="document.getElementById('gardenerSearch').value=''; filterGardenerSoils();">Clear</button>
       <a href="map.html"><button type="button">Find my soil on the map</button></a>
@@ -114,8 +220,9 @@
 </main>
 
 <footer>
-  <p>How Soil Life Works: teaching first, data second.</p>
+  <p>My Soil Coach: goal first, observation second, evidence last.</p>
 </footer>
+<script src="assets/soil-coach.js"></script>
 <script src="assets/gardener.js"></script>
 </body>
 </html>

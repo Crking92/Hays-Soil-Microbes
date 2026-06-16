@@ -385,7 +385,7 @@ function renderResult(feature, latlng, source) {
 
       <div class="result-actions">
         <button type="button" onclick="window.print()">Print this soil story</button>
-        <a href="gardener.html"><button type="button" class="secondary">Learn the microbe jobs</button></a>
+        <a href="gardener.html"><button type="button" class="secondary">Open My Soil Coach</button></a>
         <a href="research.html"><button type="button" class="secondary">Show the science</button></a>
       </div>
 

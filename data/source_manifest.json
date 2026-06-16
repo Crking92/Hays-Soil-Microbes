@@ -154,6 +154,17 @@
           "rows": 141554
         }
       ]
+    },
+    {
+      "source_name": "Legacy USDA-NRCS SSURGO Microsoft Access template database",
+      "uploaded_file": "soildb_US_2003(4).mdb",
+      "dashboard_use": "Reviewed as a possible additional source. Not used as a primary data source for the public dashboard.",
+      "adds_to_dashboard": "Does not appear to add new Hays-specific soil habitat information beyond the tabular and spatial SSURGO packages already parsed.",
+      "review_notes": "Local metadata/string inspection found many SSURGO/Soil Data Viewer/table/report/query names but did not find clear Hays-specific soil series names. Public documentation describes soildb_US_2003.mdb as a legacy Access template/database shell that is populated or linked using raw tabular SSURGO data.",
+      "recommended_status": "Archive only / optional legacy workflow reference",
+      "public_release_ok": false,
+      "why_not_public": "Legacy MDB format, adds size and complexity, and is not needed for a static browser dashboard.",
+      "reviewed_utc": "2026-06-16T18:25:25.363455+00:00"
     }
   ],
   "public_limitations": [

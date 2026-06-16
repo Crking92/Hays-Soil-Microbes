@@ -495,3 +495,117 @@
 
 /* v1.4 soil habitat translator additions */
 .form-label{display:block;font-size:.82rem;font-weight:800;color:var(--accent);margin:2px 0 4px}.compact-table{max-height:220px}.component-mix-card table{font-size:.82rem}.soil-poly:focus{outline:3px solid #20351f;outline-offset:2px}.evidence-card{border-left:5px solid var(--good)}.component-mix-card{border-left:5px solid #8a6f3d}.research-hero .help-item strong{font-size:1rem}.technical-warning{background:#fff7ec;border:1px solid var(--line);border-left:5px solid var(--warn);border-radius:14px;padding:12px}
+
+/* v2 beginner soil coach */
+.coach-hero { border-left-color: #5a7f4a; }
+.home-coach-hero .priority-card { outline: 3px solid rgba(255,255,255,.55); }
+.coach-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 1.2fr) minmax(300px, .8fr);
+  gap: 18px;
+  align-items: start;
+}
+@media (max-width: 1040px) {
+  .coach-layout { grid-template-columns: 1fr; }
+  .sticky-output { position: static !important; }
+}
+.coach-inputs { display: grid; gap: 18px; }
+.coach-step h2 { margin-bottom: 6px; }
+.sticky-output { position: sticky; top: 18px; }
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+}
+.observation-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.option-card {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-height: 96px;
+  text-align: left;
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+.option-card strong { display: block; color: var(--accent); margin-bottom: 6px; }
+.option-card span { display: block; font-weight: 500; color: var(--muted); line-height: 1.35; }
+.option-card:hover, .option-card:focus { outline: 3px solid rgba(85, 114, 70, .25); }
+.option-card.selected {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, #edf7f1, #fffdf4);
+  box-shadow: 0 0 0 3px rgba(85,114,70,.18);
+}
+.coach-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+.coach-form-grid select, .test-card select { width: 100%; min-width: 0; }
+.test-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+.test-card, .season-card, .shortcut-card, .recipe-card, .decoder-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+.test-card h3, .season-card h3, .shortcut-card h3, .recipe-card h3 { margin-top: 0; color: var(--accent); }
+.test-output, .test-note { background: var(--soft); border-radius: 12px; padding: 10px; margin-top: 10px; }
+.coach-result { display: grid; gap: 14px; }
+.coach-result-header {
+  background: linear-gradient(135deg, #eef8f0, #fff8ea);
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--good);
+  border-radius: 18px;
+  padding: 16px;
+}
+.coach-result-header h3 { margin-top: 0; font-size: 1.35rem; color: var(--accent); }
+.coach-result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+.coach-result-grid.two-col { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.coach-panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 14px;
+}
+.coach-panel h4 { margin: 0 0 8px; color: var(--accent); font-size: 1.02rem; }
+.coach-panel ul { margin-bottom: 0; }
+.do-panel { border-left: 5px solid var(--good); background: #f5fbf5; }
+.avoid-panel { border-left: 5px solid var(--warn); background: #fff8ef; }
+.planting-panel { border-left: 5px solid var(--accent); background: #f8fbf5; }
+.confidence-meter {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 14px;
+  background: var(--soft);
+}
+.season-grid, .shortcut-grid, .recipe-grid, .decoder-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+}
+.shortcut-card { border-left: 5px solid var(--accent); }
+.recipe-card { border-left: 5px solid var(--good); }
+.decoder-card strong { color: var(--accent); display: block; margin-bottom: 6px; }
+.action-shortcuts { background: linear-gradient(135deg, #fbfdf8, #fff8ea); }
+.form-label {
+  display: block;
+  font-size: .88rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin: 0 0 5px;
+}

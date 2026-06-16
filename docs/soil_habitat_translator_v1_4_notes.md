@@ -12,7 +12,7 @@
 - Split overbroad `WET_FLOOD` into:
   - `TRUE_WET_FLOOD`: hydric, poorly drained, flooding/ponding, floodplain/riparian/bottomland evidence.
   - `CLAY_WET_DRY_MICROSITES`: clay/hydrologic-group C-D wet-dry behavior without implying true floodplain conditions.
-- Added a limited-data gate. Components already labeled as insufficient property data, plus newly generated components with sparse raw properties, now receive a low-confidence public claim instead of detailed microbe-guild inference.
+- Added a limited-data gate. Components with too few soil-property fields now receive a low-confidence public claim instead of detailed microbe-guild inference.
 - Framed the public dashboard as a soil habitat translator: soil habitat -> possible soil-life jobs -> broad stewardship actions.
 
 ## Public-facing changes

@@ -1,0 +1,119 @@
+{
+  "version": "v2_beginner_soil_coach",
+  "purpose": "Interactive beginner layer for the Hays/Kyle Soil Habitat Translator. It turns goals, site observations, simple backyard tests, and season into plain first actions.",
+  "important_limit": "This is a habitat and garden decision aid, not a fertilizer prescription, engineering report, or exact microbe test.",
+  "goals": [
+    {
+      "id": "native_flowers",
+      "label": "Plant native flowers",
+      "plain_goal": "Build a pollinator-friendly native bed.",
+      "tags": ["pollinator", "prairie", "roots"],
+      "first_actions": ["Start with a small bed you can water during establishment.", "Use a mix of native grasses and flowering perennials.", "Keep soil covered between young plants with leaves, mulch, or nurse plants."],
+      "avoid": ["Do not over-amend the whole bed before you know the soil habitat.", "Do not choose only showy flowers; include grasses or structure plants."],
+      "bed_structure": "Aim for about 50-60% flowering perennials, 30-40% native grasses/sedges, and 5-10% shrubs or accents."
+    },
+    {
+      "id": "struggling_bed",
+      "label": "Fix a struggling bed",
+      "plain_goal": "Figure out why plants are stressed before buying more fertilizer.",
+      "tags": ["diagnosis", "stress"],
+      "first_actions": ["Check soil moisture 4 inches deep before watering again.", "Look for compaction, crusting, shallow rock, or water sitting after rain.", "Use the map and one backyard test before changing fertilizer."],
+      "avoid": ["Do not assume yellow leaves always mean low nitrogen.", "Do not add sand to clay soil.", "Do not till repeatedly as the first fix."],
+      "bed_structure": "Start with soil repair and observation. Replant with tough native anchors only after the stress pattern is clearer."
+    },
+    {
+      "id": "low_water",
+      "label": "Reduce watering",
+      "plain_goal": "Make the garden better at handling heat and dry spells.",
+      "tags": ["drought", "cover", "roots"],
+      "first_actions": ["Keep soil shaded with plants, mulch, or leaf litter.", "Use deep-rooted local natives matched to clay, limestone, or shallow soil.", "Water new plants slowly and deeply, then stretch time between waterings."],
+      "avoid": ["Do not water daily and shallow unless seedlings require it.", "Do not leave bare soil exposed through summer."],
+      "bed_structure": "Use drought-tolerant native perennials, bunchgrasses, and shrubs in repeated clusters rather than scattered single plants."
+    },
+    {
+      "id": "lawn_alternative",
+      "label": "Start a lawn alternative",
+      "plain_goal": "Replace high-input turf with a lower-water native ground layer.",
+      "tags": ["prairie", "cover", "low_mow"],
+      "first_actions": ["Decide whether the area needs to handle foot traffic or can become meadow-like.", "Use soil habitat to choose clay prairie, rocky savanna, or shade-tolerant species.", "Convert in phases so weeds and erosion stay manageable."],
+      "avoid": ["Do not seed into dense turf without site prep.", "Do not expect a meadow to look like a lawn during establishment."],
+      "bed_structure": "For meadow-style areas, use native grasses as the matrix and add forbs in patches. For paths, keep durable groundcovers or mulch routes."
+    },
+    {
+      "id": "trees_shrubs",
+      "label": "Plant trees or shrubs",
+      "plain_goal": "Choose woody plants that match root depth, drainage, limestone, and heat.",
+      "tags": ["woody", "roots", "shade"],
+      "first_actions": ["Check soil depth and drainage before choosing tree size.", "Protect the root zone from compaction.", "Mulch wide and shallow, not piled against the trunk."],
+      "avoid": ["Do not plant water-loving trees on shallow rocky uplands.", "Do not bury the root flare.", "Do not amend only a tiny planting hole in heavy clay."],
+      "bed_structure": "Use a layered planting: canopy or small tree, shrubs, grasses/sedges, and leaf-litter-tolerant perennials."
+    },
+    {
+      "id": "erosion",
+      "label": "Slow runoff or erosion",
+      "plain_goal": "Help stormwater soak in and protect soil from washing away.",
+      "tags": ["runoff", "cover", "roots"],
+      "first_actions": ["Keep bare soil covered immediately.", "Use roots to slow water: grasses, sedges, and deep-rooted perennials.", "Place mulch, logs, rocks, or plants across the slope contour where appropriate."],
+      "avoid": ["Do not leave slopes bare after disturbance.", "Do not send concentrated runoff into a new loose bed without protection."],
+      "bed_structure": "Build a dense root mat with native grasses/sedges first, then add flowers and shrubs once the soil is stable."
+    },
+    {
+      "id": "learn_soil",
+      "label": "Just understand my soil",
+      "plain_goal": "Learn what your soil habitat means before making big changes.",
+      "tags": ["learning"],
+      "first_actions": ["Look up the soil on the map.", "Do one simple backyard test: ribbon, infiltration, or shovel test.", "Compare what the map says with what you see in the garden."],
+      "avoid": ["Do not make expensive changes from one clue alone.", "Do not treat regional microbe data as an exact yard test."],
+      "bed_structure": "No planting structure needed yet. Learn the habitat first, then choose plants."
+    }
+  ],
+  "observations": [
+    {"id":"water_sits","label":"Water sits after rain","tags":["wet", "slow_infiltration", "compaction"],"means":"Water is entering slowly, the soil is already full, the soil is compacted, or the site is in a low spot.","first_step":"Do an infiltration test and avoid walking or working this area while wet.","avoid":"Do not add more water until you check moisture below the surface."},
+    {"id":"cracks_dry","label":"Soil cracks when dry","tags":["clay", "shrink_swell", "drought"],"means":"Clay soils can shrink when dry and swell when wet. Roots need plants that tolerate wet-dry swings.","first_step":"Keep the surface covered and use deep-rooted native plants that can handle clay cycles.","avoid":"Do not till repeatedly to break cracks; it can make structure worse over time."},
+    {"id":"sticky","label":"Soil is sticky when wet","tags":["clay", "compaction"],"means":"Sticky soil often has high clay. Clay is not bad, but it is easy to damage when wet.","first_step":"Wait until it is moist, not sticky, before planting or digging.","avoid":"Do not work clay soil while it sticks to tools or shoes."},
+    {"id":"rocky_shallow","label":"Soil is shallow or rocky","tags":["shallow", "drought", "limestone"],"means":"Roots may have less room and the site may dry quickly after rain.","first_step":"Choose smaller, drought-adapted native plants and protect the thin soil layer.","avoid":"Do not choose plants that need deep, constantly moist soil."},
+    {"id":"yellow_leaves","label":"Leaves turn yellow easily","tags":["alkaline", "nutrient_lock", "water_stress"],"means":"Yellow leaves can come from high-pH limestone soil, water stress, root stress, or true nutrient shortage.","first_step":"Check moisture and soil pH before fertilizing.","avoid":"Do not guess with fertilizer before checking root and water conditions."},
+    {"id":"wilts_after_watering","label":"Plants wilt even after watering","tags":["root_air", "compaction", "water_stress"],"means":"Water may not be reaching active roots, or roots may lack air in compacted or saturated soil.","first_step":"Check soil moisture 4 inches deep and inspect whether the root zone is soggy, dry, or compacted.","avoid":"Do not keep watering daily if the soil below is already wet."},
+    {"id":"summer_dieback","label":"Plants die in summer heat","tags":["drought", "heat", "cover"],"means":"Bare soil, shallow roots, wrong plant choice, or poor establishment can make heat stress worse.","first_step":"Cover soil, water new plants deeply, and shift planting to fall when possible.","avoid":"Do not plant tender or water-hungry species into full summer stress."},
+    {"id":"plants_flop","label":"Plants grow fast but flop","tags":["too_rich", "shade", "water"],"means":"Plants may be getting too much water/fertility, too little sun, or the wrong species for the soil.","first_step":"Reduce pampering and use locally adapted natives with natural structure.","avoid":"Do not keep adding fertilizer to make weak growth stronger."},
+    {"id":"bare_hard","label":"Bare soil gets hard or crusty","tags":["cover", "compaction", "erosion"],"means":"Rain impact and sun can seal the surface, especially on bare clay or silty soil.","first_step":"Add plant cover, leaf litter, or mulch and keep traffic off wet soil.","avoid":"Do not leave exposed soil through hot months or heavy rain periods."},
+    {"id":"nothing_grows","label":"Nothing wants to grow","tags":["diagnosis", "compaction", "shallow", "water_stress"],"means":"The problem may be compaction, construction fill, shallow rock, wrong plant match, water pattern, or shade/sun mismatch.","first_step":"Do a shovel test and a moisture check before replanting.","avoid":"Do not keep replacing plants without identifying the site stress."}
+  ],
+  "tag_actions": {
+    "clay": {"do":["Keep soil covered so clay does not bake into a crust.","Use deep-rooted native grasses and forbs to build pores over time.","Plant when clay is moist but not sticky."],"avoid":["Do not add sand to clay.","Do not repeatedly till wet clay."]},
+    "wet": {"do":["Use plants that tolerate short wet periods if the site truly stays wet.","Keep equipment and foot traffic off saturated soil.","Watch whether water sits because of a low spot, compaction, or true floodplain position."],"avoid":["Do not plant dry-upland species in a spot that stays saturated."]},
+    "slow_infiltration": {"do":["Water slowly so it can soak in instead of running off.","Use roots and mulch to improve surface structure."],"avoid":["Do not blast water onto bare soil."]},
+    "compaction": {"do":["Create walking paths so beds are not stepped on.","Use living roots and mulch to rebuild structure.","Loosen only where needed for planting, then protect the area."],"avoid":["Do not drive or walk repeatedly over wet soil."]},
+    "drought": {"do":["Use local drought-adapted natives.","Water new plants deeply and less often after establishment begins.","Plant in fall when possible."],"avoid":["Do not leave soil bare in summer."]},
+    "shallow": {"do":["Choose plants that naturally grow in rocky or thin soils.","Expect smaller mature size and slower establishment.","Protect existing topsoil from erosion."],"avoid":["Do not force deep-rooted water-loving plants into thin soil."]},
+    "limestone": {"do":["Choose limestone-adapted Central Texas natives.","Use organic cover and roots to help nutrient cycling.","Use soil testing before adding phosphorus or iron products."],"avoid":["Do not try to permanently turn limestone soil acidic." ]},
+    "alkaline": {"do":["Look for plants adapted to high-pH soil.","Check whether yellow leaves are from pH, water, or root stress."],"avoid":["Do not assume yellow leaves are always fertilizer shortage."]},
+    "cover": {"do":["Cover bare soil with native plants, mulch, leaves, or temporary nurse plants.","Keep living roots in the ground across more of the year."],"avoid":["Do not leave bare soil exposed during heat or heavy rain." ]},
+    "runoff": {"do":["Plant across the slope to slow water.","Use grasses, sedges, and mulch to protect the soil surface.","Spread water out instead of concentrating it."],"avoid":["Do not send concentrated runoff through loose bare soil."]},
+    "shade": {"do":["Match plants to light level; woodland-edge species may fit better than prairie species in shade.","Protect tree root zones and leaf litter where appropriate."],"avoid":["Do not force full-sun prairie plants into deep shade." ]},
+    "root_air": {"do":["Check whether the root zone is wet, dry, or compacted before watering again.","Use plants adapted to the actual water pattern."],"avoid":["Do not keep watering if roots are sitting in saturated soil."]}
+  },
+  "soil_habitat_cards": [
+    {"id":"sticky_sponge","label":"Sticky Clay Prairie Soil","tags":["clay"],"story":"This soil acts like a sponge made of tiny plates. It can hold water and nutrients, but it can get hard, sticky, or compacted.","root_meaning":"Roots need air pockets, slow water, and time. Deep native roots help build structure.","soil_life_jobs":["Soil builders","Recyclers","Drought survivors","Root helpers"],"first_move":"Keep soil covered and avoid working it when wet."},
+    {"id":"limestone_lunchbox","label":"Limestone Lunchbox Soil","tags":["limestone","alkaline"],"story":"This soil can have plenty of minerals, but high pH can lock some nutrients away from plants.","root_meaning":"Plants should be adapted to calcium-rich, alkaline conditions.","soil_life_jobs":["Nutrient unlockers","Root helpers","Recyclers"],"first_move":"Choose limestone-adapted natives before trying to change the pH."},
+    {"id":"thin_skin","label":"Thin-Skin Rocky Soil","tags":["shallow"],"story":"This soil is a thin blanket over rock. It heats and dries quickly.","root_meaning":"Roots have less room, so plant size and water demand matter.","soil_life_jobs":["Drought survivors","Root helpers","Recyclers in protected pockets"],"first_move":"Protect the thin soil layer and use tough local natives."},
+    {"id":"flood_pulse","label":"Flood-Pulse Soil","tags":["wet"],"story":"This soil may get wet enough that air disappears from pore spaces for a while.","root_meaning":"Plants need to tolerate short periods of wet feet if the wetness is real and repeated.","soil_life_jobs":["Balance keepers","Nitrogen helpers","Wet-soil recyclers"],"first_move":"Confirm wetness with observation, then choose plants that fit it."},
+    {"id":"covered_living","label":"Covered Living Soil","tags":["cover","roots"],"story":"Covered soil stays cooler, loses less water, and feeds more soil life than bare soil.","root_meaning":"Roots and litter become the food and shelter for the soil food web.","soil_life_jobs":["Recyclers","Soil builders","Root helpers"],"first_move":"Keep leaves, mulch, or living plants on the soil surface."}
+  ],
+  "backyard_tests": [
+    {"id":"infiltration","label":"Water soak-in test","question":"How long did water take to soak in?","choices":[{"label":"Less than 5 minutes","meaning":"Water enters fast. Soil may be sandy, cracked, dry, or well structured.","tags":["fast_drain"]},{"label":"5-30 minutes","meaning":"Moderate soak-in. This is often workable for many native beds.","tags":["moderate"]},{"label":"More than 30 minutes","meaning":"Slow soak-in. Clay, compaction, crusting, or saturation may be limiting water movement.","tags":["slow_infiltration", "compaction"]},{"label":"Still there after 1 hour","meaning":"Very slow soak-in or saturated soil. Confirm whether this is compaction, a low spot, or true wet soil.","tags":["wet", "slow_infiltration"]}],"how_to":"Push a bottomless can or ring into the soil, pour in a measured amount of water, and time how long it takes to disappear."},
+    {"id":"ribbon","label":"Ribbon test","question":"What happens when you squeeze moist soil?","choices":[{"label":"Falls apart quickly","meaning":"Lower clay; water may drain faster and organic cover still matters.","tags":["loamy"]},{"label":"Makes a short ribbon","meaning":"Moderate clay or loam-clay mix. Good structure is possible with roots and cover.","tags":["clay"]},{"label":"Makes a long sticky ribbon","meaning":"High clay. Avoid working it wet and choose clay-tolerant natives.","tags":["clay", "compaction"]}],"how_to":"Moisten soil until it feels like putty, squeeze it between thumb and finger, and see whether it forms a ribbon."},
+    {"id":"shovel","label":"Shovel/root-zone test","question":"What do you see in a small hole?","choices":[{"label":"Many roots and crumbs","meaning":"Good signs: roots and crumbs suggest structure and living soil habitat.","tags":["roots", "cover"]},{"label":"Hard layer or plate-like chunks","meaning":"Compaction or dense clay may be restricting roots and air.","tags":["compaction", "clay"]},{"label":"Rock very close to surface","meaning":"Shallow soil. Choose plants adapted to thin rocky conditions.","tags":["shallow"]},{"label":"Sour smell or gray wet soil","meaning":"Low oxygen may be present. Confirm drainage and wetness before planting dry-upland species.","tags":["wet", "root_air"]}],"how_to":"Dig one small test hole in a place you can safely disturb. Look for roots, crumbs, hard layers, rock, smell, and moisture."}
+  ],
+  "seasonal_actions": {
+    "spring": ["Plant warm-season natives while moisture is still available.", "Watch where storms create runoff, puddles, or crusting.", "Mulch or plant cover before heat arrives."],
+    "summer": ["Protect soil from heat with living plants, leaves, or mulch.", "Water new plants deeply but less often; check moisture below the surface.", "Avoid major soil disturbance during extreme heat."],
+    "fall": ["Best season for many Central Texas native plantings.", "Seed or plant prairie species when timing fits the species.", "Use fall roots to prepare the soil for next summer."],
+    "winter": ["Observe drainage after rain.", "Plan beds, paths, and plant lists.", "Let leaves feed and protect soil where appropriate."]
+  },
+  "confidence_rules": {
+    "low": "Low: this is based on a goal only. Use the map or one backyard test before making big changes.",
+    "medium": "Medium: your observations give useful clues, but construction, fill, irrigation, and compaction can change small sites.",
+    "higher": "Higher: mapped soil plus repeated backyard observations point in the same direction. A lab soil test is still needed for fertilizer decisions."
+  }
+}
