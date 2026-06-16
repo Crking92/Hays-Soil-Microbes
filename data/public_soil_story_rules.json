@@ -1,63 +1,123 @@
 {
-  "version": "public_story_rules_v1_3",
-  "purpose": "Plain-language translation layer for public soil story cards.",
-  "important_limit": "These rules translate mapped soil properties into habitat interpretations. They do not confirm exact microbes at a property.",
+  "version": "public_story_rules_v1_4_soil_habitat_translator",
+  "purpose": "Plain-language soil habitat translator. The map tells a habitat story first; microbe names and genes stay in evidence/appendix views.",
+  "important_limit": "Soil habitat can be inferred from mapped soil properties. Exact microbes and active functions at a site require local tests.",
   "soil_personalities": [
     {
       "id": "sticky_sponge",
       "label": "Sticky Sponge",
       "trigger": "clay >= 35% or mapped name/texture contains clay",
       "plain_meaning": "Clayey soil can hold water and nutrients, but it can compact and become hard when dry.",
-      "actions": ["Keep soil covered", "Avoid working clay when wet", "Use deep-rooted native perennials"]
+      "actions": [
+        "Keep soil covered",
+        "Avoid working clay when wet",
+        "Use deep-rooted native perennials"
+      ]
+    },
+    {
+      "id": "clay_redox_microsites",
+      "label": "Clay Wet-Dry Pocket Soil",
+      "trigger": "clay >= 35%, hydrologic group C/D, or clayey mapunit wording without true flood evidence",
+      "plain_meaning": "Heavy clay can briefly form tiny low-oxygen pockets after rain even when the whole soil is not a floodplain.",
+      "actions": [
+        "Avoid traffic when wet",
+        "Keep living roots",
+        "Use plant cover to improve aggregation"
+      ]
     },
     {
       "id": "limestone_lunchbox",
       "label": "Limestone Lunchbox",
       "trigger": "pH >= 7.4, CaCO3 >= 5%, or mapped name suggests limestone/carbonate influence",
       "plain_meaning": "Nutrients may be present, but high pH can keep some of them chemically locked up.",
-      "actions": ["Choose limestone-adapted natives", "Use soil tests before adding fertilizer", "Do not fight pH aggressively"]
+      "actions": [
+        "Choose limestone-adapted natives",
+        "Use soil tests before adding fertilizer",
+        "Do not fight pH aggressively"
+      ]
     },
     {
       "id": "thin_skin_hill_soil",
       "label": "Thin-Skin Hill Soil",
       "trigger": "restriction depth <= 50 cm, shallow/rock/lithic wording, or high rock signal",
       "plain_meaning": "Thin soil over rock dries quickly and gives roots less room.",
-      "actions": ["Use drought-adapted natives", "Protect thin topsoil", "Expect slower establishment"]
+      "actions": [
+        "Use drought-adapted natives",
+        "Protect thin topsoil",
+        "Expect slower establishment"
+      ]
     },
     {
       "id": "flood_pulse_soil",
-      "label": "Flood-Pulse Soil",
-      "trigger": "poor drainage, hydric/flood/pond/riparian wording, or wet lowland context",
-      "plain_meaning": "Wet periods can lower oxygen and change nutrient cycling.",
-      "actions": ["Use wet-tolerant plants", "Protect streamside roots", "Avoid compaction when saturated"]
+      "label": "True Wet/Flood-Pulse Soil",
+      "trigger": "hydric soil, poor/somewhat poor drainage, flooding/ponding records, floodplain/riparian/bottomland wording",
+      "plain_meaning": "Some soils really do flood or stay wet long enough to reduce oxygen for roots and microbes.",
+      "actions": [
+        "Use plants adapted to periodic wetness",
+        "Protect streamside roots",
+        "Avoid compaction when saturated"
+      ]
     },
     {
       "id": "root_fed_prairie_soil",
       "label": "Root-Fed Prairie Soil",
       "trigger": "ecological site or plant indicators include prairie, grassland, bluestem, grama, Indiangrass, switchgrass, gamagrass, or perennial forbs",
       "plain_meaning": "Grassland roots feed the soil food web and help build structure.",
-      "actions": ["Use diverse native grasses and forbs", "Keep living roots", "Avoid long-term bare soil"]
+      "actions": [
+        "Use diverse native grasses and forbs",
+        "Keep living roots",
+        "Avoid long-term bare soil"
+      ]
     },
     {
       "id": "leaf_litter_woodland_soil",
       "label": "Leaf-Litter Woodland Soil",
       "trigger": "ecological site or indicators include oak, woodland, forest, savanna, trees, or woody species",
       "plain_meaning": "Woody roots and leaf litter can support fungal decomposition and tree-root soil processes.",
-      "actions": ["Protect leaf litter where appropriate", "Avoid compacting tree root zones", "Keep woody soil cover stable"]
+      "actions": [
+        "Protect leaf litter where appropriate",
+        "Avoid compacting tree root zones",
+        "Keep woody soil cover stable"
+      ]
     }
   ],
   "microbe_job_groups": [
-    {"id": "recyclers", "label": "Recyclers", "plain_meaning": "Break down dead leaves, roots, mulch, and compost."},
-    {"id": "nutrient_unlockers", "label": "Nutrient unlockers", "plain_meaning": "Help move nitrogen, phosphorus, sulfur, iron, and minerals into more usable forms."},
-    {"id": "root_helpers", "label": "Root helpers", "plain_meaning": "Live near roots and support nutrient exchange and root-zone structure."},
-    {"id": "soil_builders", "label": "Soil builders", "plain_meaning": "Help glue soil into crumbs so air and water can move."},
-    {"id": "drought_survivors", "label": "Drought survivors", "plain_meaning": "Persist through heat, drying, and wet-dry swings."},
-    {"id": "balance_keepers", "label": "Balance keepers", "plain_meaning": "Shift with water, oxygen, pH, clay, roots, and organic matter."}
+    {
+      "id": "recyclers",
+      "label": "Recyclers",
+      "plain_meaning": "Break down dead leaves, roots, mulch, and compost."
+    },
+    {
+      "id": "nutrient_unlockers",
+      "label": "Nutrient unlockers",
+      "plain_meaning": "Help move nitrogen, phosphorus, sulfur, iron, and minerals into more usable forms."
+    },
+    {
+      "id": "root_helpers",
+      "label": "Root helpers",
+      "plain_meaning": "Live near roots and support nutrient exchange and root-zone structure."
+    },
+    {
+      "id": "soil_builders",
+      "label": "Soil builders",
+      "plain_meaning": "Help glue soil into crumbs so air and water can move."
+    },
+    {
+      "id": "drought_survivors",
+      "label": "Drought survivors",
+      "plain_meaning": "Persist through heat, drying, and wet-dry swings."
+    },
+    {
+      "id": "balance_keepers",
+      "label": "Balance keepers",
+      "plain_meaning": "Shift with water, oxygen, pH, clay, roots, and organic matter."
+    }
   ],
   "evidence_labels": {
-    "mapped_soil": "Mapped soil evidence",
-    "regional_microbe": "Regional microbial evidence",
-    "prediction": "Soil-habitat prediction",
-    "needs_test": "Needs local test for exact confirmation"
+    "mapped_soil": "Mapped soil evidence: strongest layer for habitat.",
+    "component_mix": "Component mix evidence: map units may contain several soil components.",
+    "regional_microbe": "Regional microbial evidence: background context, not site proof.",
+    "prediction": "Soil-habitat prediction: useful but should stay cautious.",
+    "needs_test": "Exact microbes/activity/nutrients require local testing."
   }
 }

@@ -9,9 +9,9 @@
 <body>
 <header>
   <p class="eyebrow">Research path</p>
-  <h1>Science + Evidence</h1>
+  <h1>Evidence, Without the Jargon</h1>
   <p class="big-intro">
-    This page keeps the science, but explains it in layers: plain meaning first, evidence strength second, raw tables last.
+    This page keeps the science, but makes the public path simple: soil habitat first, evidence strength second, technical tables last.
   </p>
   <div class="mode-nav">
     <a href="index.html">Start Here</a>
@@ -27,10 +27,9 @@
   <div id="appError"></div>
 
   <section class="story-hero research-hero">
-    <h2>The simple research story</h2>
+    <h2>The evidence story in three layers</h2>
     <p class="big-intro">
-      The dashboard combines mapped soil evidence with regional microbial evidence. It is strongest at explaining
-      <strong>what the soil habitat is like</strong> and more cautious when explaining <strong>which microbes may be active there</strong>.
+      The dashboard is strongest when it explains <strong>soil habitat</strong>: clay, limestone, water, air, roots, and organic matter. Microbe names and genes are useful evidence, but they are not the first public story.
     </p>
     <div class="help-strip">
       <div class="help-item">
@@ -85,12 +84,12 @@
 
   <section class="card" style="margin-top:18px;">
     <div class="tabs">
-      <button class="tab active" data-tab="summary">Plain-English Summary</button>
+      <button class="tab active" data-tab="summary">Soil Habitat Translator</button>
       <button class="tab" data-tab="soils">Soil Evidence</button>
       <button class="tab" data-tab="jobs">Microbe Jobs</button>
-      <button class="tab" data-tab="taxa">Microbe Names</button>
+      <button class="tab" data-tab="taxa">Optional Microbe Names</button>
       <button class="tab" data-tab="evidence">Evidence Rules</button>
-      <button class="tab" data-tab="raw">Raw Tables</button>
+      <button class="tab" data-tab="raw">Technical Appendix</button>
     </div>
 
     <div id="panel-summary" class="tab-panel">
@@ -129,7 +128,7 @@
         root depth, organic matter, and plant-community clues.
       </p>
       <div class="controls">
-        <input id="soilSearch" type="search" placeholder="Search soil name, texture, habitat, plant indicator..."/>
+        <label for="soilSearch" class="form-label">Search soil evidence</label><input id="soilSearch" type="search" placeholder="Search soil name, texture, habitat, plant indicator..."/>
         <button id="soilClear" class="secondary">Clear</button>
         <a href="map.html"><button type="button">Open map lookup</button></a>
       </div>
@@ -183,8 +182,8 @@
     </div>
 
     <div id="panel-raw" class="tab-panel" style="display:none;">
-      <h2>Raw technical tables</h2>
-      <p>These are here for audit and review. They should not be the first thing the public sees.</p>
+      <h2>Technical appendix</h2>
+      <p>These tables are for audit and expert review. Most public users can stop at the soil habitat and evidence-strength sections.</p>
 
       <details class="reveal-box">
         <summary>Show top KEGG Orthology IDs</summary>

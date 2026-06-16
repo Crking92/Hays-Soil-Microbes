@@ -9,7 +9,7 @@
 <body>
 <header>
   <p class="eyebrow">Interactive soil story map</p>
-  <h1>Find My Soil</h1>
+  <h1>Find My Soil Habitat</h1>
   <p class="big-intro">
     Click a soil shape, use coordinates, or search an address. The result explains the mapped soil in plain language:
     soil type, root meaning, likely soil-life jobs, actions, and evidence level.
@@ -39,7 +39,7 @@
       <h2>Soil story map</h2>
       <div class="guide-box">
         <h3>Choose map scope</h3>
-        <select id="layerSelect"></select>
+        <label for="layerSelect" class="form-label">Map layer</label><select id="layerSelect"></select>
         <p id="layerScopeNote" class="small"></p>
       </div>
       <p id="mapStatus" class="small">Loading soil polygons...</p>
@@ -65,6 +65,7 @@
         <p id="geoStatus" class="status-line">Your browser will ask permission. This static dashboard does not store your location.</p>
 
         <h3>Search address</h3>
+        <label for="addressInput" class="form-label">Address or place name</label>
         <div class="address-row">
           <input id="addressInput" type="search" placeholder="Example: Kyle City Hall, Kyle, TX"/>
           <button id="addressButton">Search</button>
@@ -73,8 +74,8 @@
 
         <h3>Enter coordinates</h3>
         <div class="coord-row">
-          <input id="latInput" type="number" step="any" placeholder="Latitude"/>
-          <input id="lngInput" type="number" step="any" placeholder="Longitude"/>
+          <div><label for="latInput" class="form-label">Latitude</label><input id="latInput" type="number" step="any" placeholder="29.989"/></div>
+          <div><label for="lngInput" class="form-label">Longitude</label><input id="lngInput" type="number" step="any" placeholder="-97.877"/></div>
           <button id="coordButton">Lookup</button>
         </div>
         <p id="coordStatus" class="status-line">Use decimal degrees, for example 29.99, -97.88.</p>

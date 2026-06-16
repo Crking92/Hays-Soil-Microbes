@@ -1,0 +1,1389 @@
+{
+  "version": "component_mix_v1",
+  "purpose": "Shows that SSURGO map units may contain multiple soil components; public map should not imply every polygon is one uniform soil.",
+  "mapunits": {
+    "378697": [
+      {
+        "component": "Altoga",
+        "percent": 92,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Heiden",
+        "percent": 8,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "378699": [
+      {
+        "component": "Altoga",
+        "percent": 92,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Ferris",
+        "percent": 8,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "378700": [
+      {
+        "component": "Anhalt",
+        "percent": 85,
+        "major": "Yes",
+        "habitat": "heavy clay",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Krum",
+        "percent": 8,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Tarrant",
+        "percent": 5,
+        "major": "No",
+        "habitat": "clayey shallow/rocky",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Tarpley",
+        "percent": 2,
+        "major": "No",
+        "habitat": "clayey shallow/rocky",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "378701": [
+      {
+        "component": "Anhalt",
+        "percent": 92,
+        "major": "Yes",
+        "habitat": "heavy clay",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Tarpley",
+        "percent": 6,
+        "major": "No",
+        "habitat": "clayey shallow/rocky",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Krum",
+        "percent": 2,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "378702": [
+      {
+        "component": "Austin",
+        "percent": 60,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Castephen",
+        "percent": 30,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Unnamed",
+        "percent": 10,
+        "major": "No",
+        "habitat": "clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      }
+    ],
+    "378703": [
+      {
+        "component": "Austin",
+        "percent": 60,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Castephen",
+        "percent": 30,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Unnamed",
+        "percent": 10,
+        "major": "No",
+        "habitat": "clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      }
+    ],
+    "378705": [
+      {
+        "component": "Boerne",
+        "percent": 94,
+        "major": "Yes",
+        "habitat": "limestone/alkaline loamy",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Sunev",
+        "percent": 2,
+        "major": "No",
+        "habitat": "loamy",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Oakalla",
+        "percent": 2,
+        "major": "No",
+        "habitat": "loamy",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Seawillow",
+        "percent": 1,
+        "major": "No",
+        "habitat": "loamy",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Orif",
+        "percent": 1,
+        "major": "No",
+        "habitat": "loamy",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "378707": [
+      {
+        "component": "Bolar",
+        "percent": 90,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Denton",
+        "percent": 3,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Krum",
+        "percent": 3,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Doss",
+        "percent": 2,
+        "major": "No",
+        "habitat": "clayey shallow/rocky",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Sunev",
+        "percent": 2,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "378708": [
+      {
+        "component": "Brackett",
+        "percent": 50,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Rock outcrop",
+        "percent": 20,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Comfort",
+        "percent": 15,
+        "major": "Yes",
+        "habitat": "limestone/alkaline heavy clay shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Doss",
+        "percent": 5,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Bolar",
+        "percent": 5,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Purves",
+        "percent": 5,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      }
+    ],
+    "378709": [
+      {
+        "component": "Brackett",
+        "percent": 38,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Rock outcrop",
+        "percent": 25,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Real",
+        "percent": 22,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Eckrant",
+        "percent": 10,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Volente",
+        "percent": 5,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      }
+    ],
+    "378710": [
+      {
+        "component": "Branyon",
+        "percent": 85,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Houston Black",
+        "percent": 5,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Lewisville",
+        "percent": 5,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Burleson",
+        "percent": 5,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "378712": [
+      {
+        "component": "Branyon",
+        "percent": 85,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Houston Black",
+        "percent": 5,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Burleson",
+        "percent": 5,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Lewisville",
+        "percent": 5,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "378713": [
+      {
+        "component": "Castephen",
+        "percent": 85,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Unnamed",
+        "percent": 15,
+        "major": "No",
+        "habitat": "clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      }
+    ],
+    "378715": [
+      {
+        "component": "Comfort",
+        "percent": 70,
+        "major": "Yes",
+        "habitat": "limestone/alkaline heavy clay shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Rock outcrop",
+        "percent": 15,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Eckrant",
+        "percent": 6,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Purves",
+        "percent": 3,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Rumple",
+        "percent": 3,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Real",
+        "percent": 3,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      }
+    ],
+    "628363": [
+      {
+        "component": "Dams",
+        "percent": 100,
+        "major": "Yes",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "378716": [
+      {
+        "component": "Denton",
+        "percent": 88,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Krum",
+        "percent": 6,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Doss",
+        "percent": 4,
+        "major": "No",
+        "habitat": "clayey shallow/rocky",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Anhalt",
+        "percent": 2,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "390694": [
+      {
+        "component": "Denton",
+        "percent": 90,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Sunev",
+        "percent": 3,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Krum",
+        "percent": 3,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Anhalt",
+        "percent": 2,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Purves",
+        "percent": 2,
+        "major": "No",
+        "habitat": "clayey shallow/rocky",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "390695": [
+      {
+        "component": "Doss",
+        "percent": 85,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Brackett",
+        "percent": 7,
+        "major": "No",
+        "habitat": "clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Bolar",
+        "percent": 5,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Eckrant",
+        "percent": 1,
+        "major": "No",
+        "habitat": "clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Purves",
+        "percent": 1,
+        "major": "No",
+        "habitat": "clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Denton",
+        "percent": 1,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "enough for habitat translation"
+      }
+    ],
+    "390696": [
+      {
+        "component": "Eckrant",
+        "percent": 65,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Rock outcrop",
+        "percent": 27,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Brackett",
+        "percent": 4,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Kerrville",
+        "percent": 2,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Tarpley",
+        "percent": 1,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Krum",
+        "percent": 1,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      }
+    ],
+    "390697": [
+      {
+        "component": "Ferris",
+        "percent": 85,
+        "major": "Yes",
+        "habitat": "limestone/alkaline heavy clay",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Unnamed",
+        "percent": 15,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "390698": [
+      {
+        "component": "Gruene",
+        "percent": 85,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Unnamed",
+        "percent": 15,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "enough for habitat translation"
+      }
+    ],
+    "390699": [
+      {
+        "component": "Heiden",
+        "percent": 85,
+        "major": "Yes",
+        "habitat": "limestone/alkaline heavy clay",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Houston Black",
+        "percent": 10,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Ferris",
+        "percent": 5,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "390700": [
+      {
+        "component": "Heiden",
+        "percent": 85,
+        "major": "Yes",
+        "habitat": "limestone/alkaline heavy clay",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Houston Black",
+        "percent": 10,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Ferris",
+        "percent": 5,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "390701": [
+      {
+        "component": "Heiden",
+        "percent": 85,
+        "major": "Yes",
+        "habitat": "limestone/alkaline heavy clay",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Ferris",
+        "percent": 10,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Heiden",
+        "percent": 5,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "390702": [
+      {
+        "component": "Heiden",
+        "percent": 90,
+        "major": "Yes",
+        "habitat": "limestone/alkaline heavy clay",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Houston Black",
+        "percent": 5,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Ferris",
+        "percent": 5,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "390703": [
+      {
+        "component": "Houston Black",
+        "percent": 80,
+        "major": "Yes",
+        "habitat": "limestone/alkaline heavy clay",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Heiden",
+        "percent": 15,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Fairlie",
+        "percent": 5,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "390704": [
+      {
+        "component": "Houston Black",
+        "percent": 80,
+        "major": "Yes",
+        "habitat": "limestone/alkaline heavy clay",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Heiden",
+        "percent": 15,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Houston Black",
+        "percent": 5,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "390705": [
+      {
+        "component": "Houston Black",
+        "percent": 90,
+        "major": "Yes",
+        "habitat": "limestone/alkaline heavy clay",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Heiden",
+        "percent": 10,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "390706": [
+      {
+        "component": "Krum",
+        "percent": 90,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Bolar",
+        "percent": 4,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Branyon",
+        "percent": 2,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Sunev",
+        "percent": 2,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Lewisville",
+        "percent": 2,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "393469": [
+      {
+        "component": "Krum",
+        "percent": 90,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Bolar",
+        "percent": 5,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Doss",
+        "percent": 3,
+        "major": "No",
+        "habitat": "clayey shallow/rocky",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Lewisville",
+        "percent": 2,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "393470": [
+      {
+        "component": "Krum",
+        "percent": 90,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Bolar",
+        "percent": 5,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Doss",
+        "percent": 3,
+        "major": "No",
+        "habitat": "clayey shallow/rocky",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Lewisville",
+        "percent": 2,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "393471": [
+      {
+        "component": "Lewisville",
+        "percent": 90,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Branyon",
+        "percent": 10,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "393472": [
+      {
+        "component": "Lewisville",
+        "percent": 85,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Altoga",
+        "percent": 10,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Branyon",
+        "percent": 5,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "393473": [
+      {
+        "component": "Medlin",
+        "percent": 50,
+        "major": "Yes",
+        "habitat": "limestone/alkaline heavy clay",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Eckrant",
+        "percent": 30,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Krum",
+        "percent": 8,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Comfort",
+        "percent": 8,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Rock outcrop",
+        "percent": 4,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      }
+    ],
+    "393474": [
+      {
+        "component": "Medlin",
+        "percent": 50,
+        "major": "Yes",
+        "habitat": "limestone/alkaline heavy clay",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Eckrant",
+        "percent": 45,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Rock outcrop",
+        "percent": 3,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Krum",
+        "percent": 2,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      }
+    ],
+    "393475": [
+      {
+        "component": "Oakalla",
+        "percent": 90,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Boerne",
+        "percent": 4,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Sunev",
+        "percent": 3,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Nuvalde",
+        "percent": 3,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "393476": [
+      {
+        "component": "Oakalla",
+        "percent": 90,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey true wet/flood-pulse",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Oakalla",
+        "percent": 4,
+        "major": "No",
+        "habitat": "clayey true wet/flood-pulse",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Dev",
+        "percent": 3,
+        "major": "No",
+        "habitat": "clayey true wet/flood-pulse",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Krum",
+        "percent": 2,
+        "major": "No",
+        "habitat": "clayey true wet/flood-pulse",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Unnamed",
+        "percent": 1,
+        "major": "No",
+        "habitat": "clayey true wet/flood-pulse",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "393477": [
+      {
+        "component": "Orif",
+        "percent": 85,
+        "major": "Yes",
+        "habitat": "limestone/alkaline loamy true wet/flood-pulse",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Oakalla",
+        "percent": 8,
+        "major": "No",
+        "habitat": "loamy true wet/flood-pulse",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Riverwash",
+        "percent": 4,
+        "major": "No",
+        "habitat": "true wet/flood-pulse",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Frio",
+        "percent": 2,
+        "major": "No",
+        "habitat": "loamy true wet/flood-pulse",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Unnamed",
+        "percent": 1,
+        "major": "No",
+        "habitat": "true wet/flood-pulse",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "393478": [
+      {
+        "component": "Pedernales",
+        "percent": 85,
+        "major": "Yes",
+        "habitat": "clayey",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Loneoak",
+        "percent": 5,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Hye",
+        "percent": 5,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Travis",
+        "percent": 4,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Hensley",
+        "percent": 1,
+        "major": "No",
+        "habitat": "clayey shallow/rocky",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "393479": [
+      {
+        "component": "Pits",
+        "percent": 100,
+        "major": "Yes",
+        "habitat": "clayey",
+        "data_quality": "enough for habitat translation"
+      }
+    ],
+    "393480": [
+      {
+        "component": "Purves",
+        "percent": 90,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Eckrant",
+        "percent": 4,
+        "major": "No",
+        "habitat": "clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Brackett",
+        "percent": 3,
+        "major": "No",
+        "habitat": "clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Doss",
+        "percent": 2,
+        "major": "No",
+        "habitat": "clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Rock outcrop",
+        "percent": 1,
+        "major": "No",
+        "habitat": "clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      }
+    ],
+    "393481": [
+      {
+        "component": "Rumple",
+        "percent": 60,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Comfort",
+        "percent": 20,
+        "major": "Yes",
+        "habitat": "limestone/alkaline heavy clay shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Tarpley",
+        "percent": 15,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Rock outcrop",
+        "percent": 5,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      }
+    ],
+    "393482": [
+      {
+        "component": "Real",
+        "percent": 85,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Doss",
+        "percent": 5,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Comfort",
+        "percent": 5,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Eckrant",
+        "percent": 5,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      }
+    ],
+    "393483": [
+      {
+        "component": "Real",
+        "percent": 40,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Comfort",
+        "percent": 30,
+        "major": "Yes",
+        "habitat": "limestone/alkaline heavy clay shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Doss",
+        "percent": 20,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Rock outcrop",
+        "percent": 4,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Brackett",
+        "percent": 3,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Eckrant",
+        "percent": 3,
+        "major": "No",
+        "habitat": "limestone/alkaline clayey shallow/rocky",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "393484": [
+      {
+        "component": "Seawillow",
+        "percent": 85,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Unnamed",
+        "percent": 15,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "393485": [
+      {
+        "component": "Seawillow",
+        "percent": 85,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Unnamed",
+        "percent": 15,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "393650": [
+      {
+        "component": "Sunev",
+        "percent": 85,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Unnamed",
+        "percent": 15,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "393651": [
+      {
+        "component": "Sunev",
+        "percent": 85,
+        "major": "Yes",
+        "habitat": "limestone/alkaline clayey",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Unnamed",
+        "percent": 15,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "393652": [
+      {
+        "component": "Tarpley",
+        "percent": 90,
+        "major": "Yes",
+        "habitat": "heavy clay shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Anhalt",
+        "percent": 4,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Rock outcrop",
+        "percent": 2,
+        "major": "No",
+        "habitat": "clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Doss",
+        "percent": 2,
+        "major": "No",
+        "habitat": "clayey shallow/rocky",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Rumple",
+        "percent": 2,
+        "major": "No",
+        "habitat": "clayey",
+        "data_quality": "enough for habitat translation"
+      }
+    ],
+    "393653": [
+      {
+        "component": "Tinn",
+        "percent": 85,
+        "major": "Yes",
+        "habitat": "limestone/alkaline heavy clay true wet/flood-pulse",
+        "data_quality": "enough for habitat translation"
+      },
+      {
+        "component": "Whitesboro",
+        "percent": 10,
+        "major": "No",
+        "habitat": "clayey true wet/flood-pulse",
+        "data_quality": "limited; use map-unit and component clues only"
+      },
+      {
+        "component": "Gladewater",
+        "percent": 5,
+        "major": "No",
+        "habitat": "clayey true wet/flood-pulse",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ],
+    "393654": [
+      {
+        "component": "Water",
+        "percent": 100,
+        "major": "Yes",
+        "habitat": "clayey true wet/flood-pulse",
+        "data_quality": "limited; use map-unit and component clues only"
+      }
+    ]
+  }
+}

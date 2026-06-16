@@ -123,12 +123,12 @@ function renderSimpleTable(records, limit = 25) {
     <div class="small-data-note">This is supporting data. Start with the teaching cards above, then use this table to look up soil clues.</div>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Soil clue</th><th>Plain-language meaning</th><th>Record preview</th></tr></thead>
+        <thead><tr><th>Soil habitat</th><th>What roots feel</th><th>Soil-life jobs</th><th>Best broad actions</th></tr></thead>
         <tbody>
           ${rows.map(r => {
             const title = r.muname || r.compname || r.MUSYM || r.MUKEY || "Soil record";
             const values = Object.entries(r).filter(([k,v]) => v !== null && v !== "").slice(0, 5).map(([k,v]) => `${k}: ${cell(v)}`).join("<br>");
-            return `<tr><td><strong>${cell(title)}</strong></td><td>${simpleSoilSummary(r)}</td><td>${values}</td></tr>`;
+            return `<tr><td><strong>${cell(title)}</strong><br><span class="small">${cell(r.simple_soil_habitat_type || simpleSoilSummary(r))}</span></td><td>${cell(r.plain_root_meaning || simpleSoilSummary(r), 260)}</td><td>${cell(r.plain_microbe_jobs || 'Use broad microbe-job groups only.', 260)}</td><td>${cell(r.broad_stewardship_actions || 'Keep living roots and soil cover.', 260)}</td></tr>`;
           }).join("")}
         </tbody>
       </table>

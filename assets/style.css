@@ -491,3 +491,7 @@
     border: none;
   }
 }
+
+
+/* v1.4 soil habitat translator additions */
+.form-label{display:block;font-size:.82rem;font-weight:800;color:var(--accent);margin:2px 0 4px}.compact-table{max-height:220px}.component-mix-card table{font-size:.82rem}.soil-poly:focus{outline:3px solid #20351f;outline-offset:2px}.evidence-card{border-left:5px solid var(--good)}.component-mix-card{border-left:5px solid #8a6f3d}.research-hero .help-item strong{font-size:1rem}.technical-warning{background:#fff7ec;border:1px solid var(--line);border-left:5px solid var(--warn);border-radius:14px;padding:12px}

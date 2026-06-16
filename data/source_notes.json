@@ -1,1 +1,14 @@
-{"project": "Hays/Kyle Soil + Microbial Habitat Dashboard", "version": "v0.7 GitHub static prototype", "created_utc": "2026-06-11T15:16:38+00:00", "public_warning": "Do not publish sensitive local sample metadata, private/internal notes, raw huge sequencing files, or unpublished City materials without review.", "dashboard_rules": ["Biosample metadata is not taxa or function confirmation.", "Processed taxonomy files support observed regional taxa evidence.", "Processed KO/EC/product files support functional potential, not measured activity.", "Hays/Kyle local confirmation requires local sampling or site-specific assays.", "All microbial taxa/function results shown here are regional analog evidence unless explicitly labeled local."]}
+{
+  "project": "Hays/Kyle Soil + Microbial Habitat Dashboard",
+  "version": "source_notes_v1_4_soil_habitat_translator",
+  "created_utc": "2026-06-11T15:16:38+00:00",
+  "public_warning": "This dashboard is a soil habitat translator. It explains likely habitat conditions from mapped soils and regional microbial context; it does not confirm exact microbes at a site.",
+  "dashboard_rules": [
+    "Start with mapped soil habitat: texture, pH, carbonate, depth, drainage, organic matter, plant indicators.",
+    "Show component mixtures so map units are not treated as uniform soil bodies.",
+    "Split true wet/flood soils from clay wet-dry microsites.",
+    "Gate low-property records to low-confidence public claims.",
+    "Keep microbe names, gene IDs, and raw tables in technical/appendix sections."
+  ],
+  "source_manifest": "data/source_manifest.json"
+}

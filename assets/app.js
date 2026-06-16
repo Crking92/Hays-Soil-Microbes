@@ -62,7 +62,8 @@ function plainSoilType(record) {
   else if ((clay !== null && clay >= 35) || text.includes("clay")) parts.push("clayey");
   else if (/loam|loamy/.test(text)) parts.push("loamy");
   if ((restriction !== null && restriction <= 50) || /shallow|rock outcrop|lithic/.test(text)) parts.push("shallow/rocky");
-  if (/flood|pond|hydric|riparian|poorly drained/.test(text)) parts.push("wet/flood-pulse");
+  if (record?.true_wet_flood_flag === true) parts.push("true wet/flood-pulse");
+  else if (record?.clay_redox_microsites_flag === true) parts.push("clay wet-dry pockets");
   return parts.length ? parts.join(" ") : "mapped soil";
 }
 
@@ -218,7 +219,8 @@ function renderEvidence() {
       <p><strong>Created:</strong> ${cell(src.created_utc)}</p>
       <div class="notice"><strong>Public warning:</strong> ${cell(src.public_warning, 500)}</div>
       <h3>Dashboard rules</h3>
-      <ul class="list-clean">${(src.dashboard_rules || []).map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
+      <ul class="list-clean">${(src.dashboard_rules || []).map(x => `<li>${esc(x)}</li>`).join("")}</ul>
+      <p class="small"><strong>Source manifest:</strong> ${cell(src.source_manifest || "data/source_manifest.json")}</p>`;
   }
 }
 
@@ -260,7 +262,7 @@ function renderSoilTables(records = DATA.soil?.records || []) {
   const simpleCols = [
     { label: "Soil name", key: "muname" },
     { label: "Component", key: "compname" },
-    { label: "Plain soil type", value: plainSoilType },
+    { label: "Soil habitat", value: r => r.simple_soil_habitat_type || plainSoilType(r) },
     { label: "Texture", key: "surface_texture_description" },
     { label: "Drainage", key: "drainagecl" },
     { label: "Runoff", key: "runoff" },
@@ -268,6 +270,8 @@ function renderSoilTables(records = DATA.soil?.records || []) {
     { label: "CaCO3 %", key: "caco3_r_surface_0_30cm" },
     { label: "Organic matter %", key: "om_r_surface_0_30cm" },
     { label: "Plant clue", key: "existing_plant_indicators_top10" },
+    { label: "Root meaning", key: "plain_root_meaning" },
+    { label: "Microbe jobs", key: "plain_microbe_jobs" },
     { label: "Evidence", value: r => evidencePlain(r.microbe_confidence_grade || r.confirmed_taxa_status) }
   ];
   renderTable("soilSimpleTable", records, simpleCols, 75);

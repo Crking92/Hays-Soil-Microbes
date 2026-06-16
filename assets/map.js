@@ -5,6 +5,8 @@ const App = {
   soilSummary: null,
   recordsByMukey: new Map(),
   storyRules: null,
+  componentMix: null,
+  groupedRecordsByMukey: new Map(),
   svg: null,
   marker: null,
   selectedPath: null,
@@ -14,8 +16,9 @@ const App = {
 
 const FILES = {
   manifest: "data/map_layer_manifest.json",
-  soilSummary: "data/kyle_etj_soil_summary.json",
-  storyRules: "data/public_soil_story_rules.json"
+  soilSummary: "data/tx604_soil_summary.json",
+  storyRules: "data/public_soil_story_rules.json",
+  componentMix: "data/soil_component_mix.json"
 };
 
 function fmt(value) {
@@ -94,7 +97,28 @@ function indexSoilRecords() {
     if (!grouped.has(key)) grouped.set(key, []);
     grouped.get(key).push(record);
   }
+  App.groupedRecordsByMukey = grouped;
   App.recordsByMukey = new Map([...grouped.entries()].map(([key, records]) => [key, chooseBestRecord(records)]));
+}
+
+function componentRowsForFeature(feature) {
+  const props = feature?.properties || {};
+  const key = String(prop(props, ["MUKEY", "mukey"]) || "");
+  return App.groupedRecordsByMukey.get(key) || [];
+}
+
+function componentMixForFeature(feature) {
+  const props = feature?.properties || {};
+  const key = String(prop(props, ["MUKEY", "mukey"]) || "");
+  const mix = App.componentMix?.mapunits?.[key];
+  if (mix && mix.length) return mix;
+  return componentRowsForFeature(feature).map(r => ({
+    component: r.compname,
+    percent: r.comppct_r,
+    major: r.majcompflag,
+    habitat: r.simple_soil_habitat_type,
+    data_quality: r.property_data_quality
+  }));
 }
 
 function recordForFeature(feature) {
@@ -136,12 +160,14 @@ function storyFromFeature(feature) {
   const microbeJobs = [];
   const actions = [];
   const warnings = [];
+  const lowConfidence = String(record?.property_data_quality || record?.microbe_confidence_grade || "").toLowerCase().includes("limited") || String(record?.microbe_confidence_grade || "").startsWith("D");
 
   const isClay = (clay !== null && clay >= 35) || combined.includes("clay");
   const isVeryClay = clay !== null && clay >= 50;
   const isLimestone = (pH !== null && pH >= 7.4) || (caco3 !== null && caco3 >= 5) || /limestone|calcareous|carbonate|brackett|eckrant|comfort/.test(combined);
   const isShallow = (restriction !== null && restriction <= 50) || (bedrock !== null && bedrock <= 50) || /shallow|lithic|rock outcrop|rocky/.test(combined);
-  const isWet = /poorly drained|somewhat poorly|flood|pond|riparian|bottomland|water/.test(combined) || hydric === "yes";
+  const isWet = record?.true_wet_flood_flag === true || hydric === "yes";
+  const isClayRedoxOnly = record?.clay_redox_microsites_flag === true && !isWet;
   const isLoamy = /loam|loamy/.test(combined);
   const isPrairie = /prairie|grassland|bluestem|grama|indiangrass|switchgrass|gamagrass|perennial forbs|savanna/.test(combined);
   const isWoodland = /woodland|oak|forest|juniper|savanna/.test(combined);
@@ -152,7 +178,7 @@ function storyFromFeature(feature) {
     addUnique(personalities, isVeryClay ? "Sticky Sponge" : "Clay-influenced soil");
     addUnique(clues, clay !== null ? `${clay}% surface clay` : "clay signal");
     addUnique(plantMeaning, "Clay can hold water and nutrients, but it can compact and become hard when dry.");
-    addUnique(microbeJobs, "Soil builders may help form soil crumbs that protect air, water, roots, and organic matter.");
+    addUnique(microbeJobs, isClayRedoxOnly ? "Soil builders and drought survivors may matter in clay wet-dry pockets; this is not the same as a floodplain signal." : "Soil builders may help form soil crumbs that protect air, water, roots, and organic matter.");
     addUnique(actions, "Avoid working or driving on clay soil when it is wet.");
   }
 
@@ -219,6 +245,12 @@ function storyFromFeature(feature) {
     addUnique(actions, "Use plant cover and roots to slow water and reduce erosion.");
   }
 
+  if (lowConfidence) {
+    addUnique(warnings, "This component has limited soil-property data. Use broad habitat actions, not exact microbial claims.");
+    microbeJobs.length = 0;
+    addUnique(microbeJobs, "Microbe jobs are not inferred strongly from this component because key soil properties are missing.");
+  }
+
   if (!personalities.length) addUnique(personalities, "General Soil Habitat");
   if (!clues.length) addUnique(clues, "soil map unit found");
   if (!plantMeaning.length) addUnique(plantMeaning, "Use texture, depth, drainage, pH, and plant community clues to match plants to place.");
@@ -234,7 +266,7 @@ function storyFromFeature(feature) {
   if (isWet) simpleTypeParts.push("wet or flood-pulse");
   if (!simpleTypeParts.length) simpleTypeParts.push("mapped soil");
 
-  const oneSentence = `This looks like ${simpleTypeParts.join(" ")} habitat. It may shape roots, water movement, nutrient availability, and the kinds of soil-life jobs most likely to matter here.`;
+  const oneSentence = record?.public_soil_story || `This looks like ${simpleTypeParts.join(" ")} habitat. It may shape roots, water movement, nutrient availability, and the kinds of soil-life jobs most likely to matter here.`;
 
   return {
     record,
@@ -247,7 +279,7 @@ function storyFromFeature(feature) {
     microbeJobs,
     actions,
     warnings,
-    evidence: "Habitat prediction. This uses mapped soil properties and regional microbial evidence. It does not prove exact microbes at this exact spot."
+    evidence: record?.public_microbe_claim || "Habitat prediction. This uses mapped soil properties and regional microbial evidence. It does not prove exact microbes at this exact spot."
   };
 }
 
@@ -267,6 +299,11 @@ function keyProps(props, record) {
     ["Restriction depth cm", record?.restriction_depth_cm],
     ["Ecological site", record?.ecological_site_names],
     ["Plant indicators", record?.existing_plant_indicators_top10],
+    ["Simple habitat type", record?.simple_soil_habitat_type],
+    ["Public habitat flags", record?.public_habitat_flags],
+    ["Property data quality", record?.property_data_quality],
+    ["True wet/flood flag", record?.true_wet_flood_flag],
+    ["Clay wet-dry microsites", record?.clay_redox_microsites_flag],
     ["Inferred soil-life class", record?.microbial_habitat_class],
     ["Evidence grade", record?.microbe_confidence_grade]
   ];
@@ -331,6 +368,13 @@ function renderResult(feature, latlng, source) {
         <strong>Best next actions</strong>
         ${renderList(story.actions)}
         <p><a href="actions.html">Open the full action guide</a></p>
+      </div>
+
+
+      <div class="result-item public-story-card component-mix-card">
+        <strong>Map-unit mix</strong>
+        <p class="small">SSURGO map units can contain more than one soil component. The story above uses the dominant/best-filled component, but other components may occur inside the same polygon.</p>
+        <div class="table-wrap compact-table"><table><thead><tr><th>Component</th><th>%</th><th>Habitat</th><th>Data quality</th></tr></thead><tbody>${componentMixForFeature(feature).slice(0,8).map(c => `<tr><td>${esc(c.component || "-")}</td><td>${esc(c.percent || "-")}</td><td>${esc(c.habitat || "-")}</td><td>${esc(c.data_quality || "-")}</td></tr>`).join("")}</tbody></table></div>
       </div>
 
       <div class="result-item public-story-card evidence-card">
@@ -435,7 +479,7 @@ function featurePath(feature) {
 function featureClass(feature) {
   const story = storyFromFeature(feature);
   const text = storyText(feature.properties || {}, story.record);
-  if (/flood|riparian|poorly drained|pond|water/.test(text)) return "wet";
+  if (story.record?.true_wet_flood_flag === true) return "wet";
   if (/shallow|rock|lithic/.test(text)) return "shallow";
   if (/limestone|carbonate|calcareous|brackett|eckrant/.test(text)) return "limestone";
   if (text.includes("clay")) return "clay";
@@ -518,7 +562,7 @@ function renderMap() {
     const d = featurePath(feature);
     const cls = featureClass(feature);
     const title = titleForFeature(feature.properties || {}, recordForFeature(feature));
-    return `<path class="soil-poly ${cls}" data-index="${index}" d="${d}"><title>${esc(title)}</title></path>`;
+    return `<path class="soil-poly ${cls}" data-index="${index}" tabindex="0" role="button" aria-label="Soil polygon: ${esc(title)}" d="${d}"><title>${esc(title)}</title></path>`;
   }).join("");
 
   const mapEl = document.getElementById("map");
@@ -526,6 +570,17 @@ function renderMap() {
   App.svg = document.getElementById("soilSvg");
   App.marker = null;
   App.selectedPath = null;
+
+  App.svg.addEventListener("keydown", event => {
+    const path = event.target.closest ? event.target.closest("path[data-index]") : null;
+    if (!path || !["Enter", " "].includes(event.key)) return;
+    event.preventDefault();
+    const feature = App.soilData.features[Number(path.dataset.index)];
+    const coords = [];
+    collectCoords(feature.geometry, coords);
+    const avg = coords.reduce((acc, c) => [acc[0] + c[0], acc[1] + c[1]], [0,0]).map(v => v / Math.max(coords.length, 1));
+    lookup({ lat: avg[1], lng: avg[0] }, "keyboard map selection", feature);
+  });
 
   App.svg.addEventListener("click", event => {
     const svgPoint = svgPointFromEvent(event);
@@ -611,14 +666,16 @@ function resetMap() {
 async function init() {
   try {
     const embedded = window.HAYS_MAP_EMBED || {};
-    const [manifest, soilSummary, storyRules] = await Promise.all([
+    const [manifest, soilSummary, storyRules, componentMix] = await Promise.all([
       loadJSON(FILES.manifest, embedded.manifest),
       loadJSON(FILES.soilSummary, embedded.soilSummary),
-      loadJSON(FILES.storyRules, embedded.storyRules)
+      loadJSON(FILES.storyRules, embedded.storyRules),
+      loadJSON(FILES.componentMix, embedded.componentMix)
     ]);
     App.manifest = manifest;
     App.soilSummary = soilSummary;
     App.storyRules = storyRules;
+    App.componentMix = componentMix;
     indexSoilRecords();
 
     const select = document.getElementById("layerSelect");

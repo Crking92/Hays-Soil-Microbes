@@ -1,0 +1,164 @@
+{
+  "version": "source_manifest_v1",
+  "created_utc": "2026-06-16T18:12:32.512372+00:00",
+  "project_role": "Audit trail for the soil habitat translator dashboard.",
+  "sources": [
+    {
+      "source_name": "USDA NRCS SSURGO spatial package for TX604, Comal and Hays Counties, Texas",
+      "uploaded_zip": "spatial(1).zip",
+      "dashboard_use": "Raw source for soil survey polygons, line features, point features, and soil survey area boundary. Dashboard currently uses simplified GeoJSON derivatives for public map speed.",
+      "adds_to_dashboard": "Adds raw shapefile provenance and non-polygon spatial features that are not fully exposed in the current public map.",
+      "files": [
+        {
+          "path": "soilmu_a_tx604.dbf",
+          "bytes": 404641
+        },
+        {
+          "path": "soilmu_a_tx604.prj",
+          "bytes": 145
+        },
+        {
+          "path": "soilmu_a_tx604.shp",
+          "bytes": 9358376
+        },
+        {
+          "path": "soilmu_a_tx604.shx",
+          "bytes": 48396
+        },
+        {
+          "path": "soilmu_l_tx604.dbf",
+          "bytes": 162
+        },
+        {
+          "path": "soilmu_l_tx604.prj",
+          "bytes": 145
+        },
+        {
+          "path": "soilmu_l_tx604.shp",
+          "bytes": 100
+        },
+        {
+          "path": "soilmu_l_tx604.shx",
+          "bytes": 100
+        },
+        {
+          "path": "soilmu_p_tx604.dbf",
+          "bytes": 162
+        },
+        {
+          "path": "soilmu_p_tx604.prj",
+          "bytes": 145
+        },
+        {
+          "path": "soilmu_p_tx604.shp",
+          "bytes": 100
+        },
+        {
+          "path": "soilmu_p_tx604.shx",
+          "bytes": 100
+        },
+        {
+          "path": "soilsa_a_tx604.dbf",
+          "bytes": 191
+        },
+        {
+          "path": "soilsa_a_tx604.prj",
+          "bytes": 145
+        },
+        {
+          "path": "soilsa_a_tx604.shp",
+          "bytes": 39324
+        },
+        {
+          "path": "soilsa_a_tx604.shx",
+          "bytes": 108
+        },
+        {
+          "path": "soilsf_l_tx604.dbf",
+          "bytes": 162
+        },
+        {
+          "path": "soilsf_l_tx604.prj",
+          "bytes": 145
+        },
+        {
+          "path": "soilsf_l_tx604.shp",
+          "bytes": 100
+        },
+        {
+          "path": "soilsf_l_tx604.shx",
+          "bytes": 100
+        },
+        {
+          "path": "soilsf_p_tx604.dbf",
+          "bytes": 58978
+        },
+        {
+          "path": "soilsf_p_tx604.prj",
+          "bytes": 145
+        },
+        {
+          "path": "soilsf_p_tx604.shp",
+          "bytes": 25832
+        },
+        {
+          "path": "soilsf_p_tx604.shx",
+          "bytes": 7452
+        },
+        {
+          "path": "soilsf_t_tx604.txt",
+          "bytes": 1771
+        },
+        {
+          "path": "version.txt",
+          "bytes": 7
+        }
+      ]
+    },
+    {
+      "source_name": "USDA NRCS SSURGO tabular package for TX604, Comal and Hays Counties, Texas",
+      "uploaded_zip": "tabular(1).zip",
+      "dashboard_use": "Source for mapunit, component, horizon, mapunit aggregate, ecological class, existing plants, monthly flooding/ponding, and interpretation tables.",
+      "adds_to_dashboard": "Adds full TX604 component coverage, missing mapunit summaries, monthly wetness clues, ecological site/plant-indicator records, and source-audit tables.",
+      "key_tables": [
+        {
+          "file": "mapunit.txt",
+          "rows": 51
+        },
+        {
+          "file": "comp.txt",
+          "rows": 183
+        },
+        {
+          "file": "chorizon.txt",
+          "rows": 193
+        },
+        {
+          "file": "muaggatt.txt",
+          "rows": 51
+        },
+        {
+          "file": "cmonth.txt",
+          "rows": 2100
+        },
+        {
+          "file": "ceplants.txt",
+          "rows": 1081
+        },
+        {
+          "file": "cecoclas.txt",
+          "rows": 158
+        },
+        {
+          "file": "cinterp.txt",
+          "rows": 141554
+        }
+      ]
+    }
+  ],
+  "public_limitations": [
+    "SSURGO polygons are mapped soil units; they are not exact property-scale soil tests.",
+    "Component percentages mean a polygon can contain several soil types, especially in complexes.",
+    "Microbial functions remain regional/contextual unless local biological sampling is added."
+  ]
+}
